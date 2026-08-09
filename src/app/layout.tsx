@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { EVDisclaimer } from "@/components/ev-disclaimer";
+import { Nav } from "@/components/nav";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -37,10 +38,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container mx-auto flex h-14 items-center justify-between px-4">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-4">
                 <h1 className="text-lg font-bold tracking-tight">
                   EV Betting Agent
                 </h1>
+                <Nav />
               </div>
               <ThemeToggle />
             </div>

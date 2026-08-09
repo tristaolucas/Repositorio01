@@ -7,6 +7,8 @@ datasource db {
   provider = "sqlite"
 }
 
+// ─── E1/E2: Freebet ───
+
 model Freebet {
   id        String   @id @default(cuid())
   name      String
@@ -19,7 +21,7 @@ model Freebet {
 }
 
 model FreebetSelection {
-  id          String  @id @default(cuid())
+  id          String @id @default(cuid())
   description String
   freebetId   String
   odds        Float
@@ -32,10 +34,147 @@ model FreebetSelection {
 }
 
 model FreebetDecision {
-  id           String   @id @default(cuid())
-  freebetId    String   @unique
-  selectionId  String
-  chosenAt     DateTime @default(now())
+  id          String   @id @default(cuid())
+  freebetId   String   @unique
+  selectionId String
+  chosenAt    DateTime @default(now())
 
   freebet Freebet @relation(fields: [freebetId], references: [id], onDelete: Cascade)
+}
+
+// ─── E3: Banca & Registro ───
+
+model Bankroll {
+  id             String   @id @default(cuid())
+  name           String   @default("Principal")
+  initialBalance Float
+  createdAt      DateTime @default(now())
+
+  bets Bet[]
+}
+
+model Bet {
+  id           String    @id @default(cuid())
+  bankrollId   String
+  description  String
+  sport        String    @default("futebol")
+  league       String    @default("")
+  odds         Float
+  stake        Float
+  impliedProb  Float
+  estimatedProb Float
+  ev           Float
+  status       String    @default("pending") // pending | won | lost | void
+  profit       Float     @default(0)
+  placedAt     DateTime  @default(now())
+  settledAt    DateTime?
+  notes        String    @default("")
+
+  bankroll Bankroll @relation(fields: [bankrollId], references: [id], onDelete: Cascade)
+
+  @@index([bankrollId])
+  @@index([status])
+  @@index([placedAt])
+}
+
+// ─── E4/E5: Odds & Value Bets ───
+
+model Match {
+  id         String   @id @default(cuid())
+  sport      String
+  league     String
+  homeTeam   String
+  awayTeam   String
+  startTime  DateTime
+  status     String   @default("scheduled") // scheduled | live | finished
+  homeScore  Int?
+  awayScore  Int?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  odds      OddsSnapshot[]
+  valueBets ValueBet[]
+
+  @@unique([sport, league, homeTeam, awayTeam, startTime])
+  @@index([startTime])
+  @@index([sport, league])
+}
+
+model OddsSnapshot {
+  id          String   @id @default(cuid())
+  matchId     String
+  bookmaker   String
+  market      String   // h2h | spreads | totals
+  selection   String   // home | away | draw | over | under
+  odds        Float
+  isSharp     Boolean  @default(false)
+  capturedAt  DateTime @default(now())
+
+  match Match @relation(fields: [matchId], references: [id], onDelete: Cascade)
+
+  @@index([matchId])
+  @@index([bookmaker])
+  @@index([capturedAt])
+}
+
+model ValueBet {
+  id            String   @id @default(cuid())
+  matchId       String
+  bookmaker     String
+  market        String
+  selection     String
+  odds          Float
+  fairProb      Float
+  ev            Float
+  evPercent     Float
+  margin        Float
+  confidence    String   @default("medium") // low | medium | high
+  status        String   @default("active") // active | expired | taken
+  foundAt       DateTime @default(now())
+  expiresAt     DateTime?
+
+  match Match @relation(fields: [matchId], references: [id], onDelete: Cascade)
+
+  @@index([matchId])
+  @@index([status])
+  @@index([foundAt])
+}
+
+// ─── E7: Tipster Tracker ───
+
+model Tipster {
+  id          String   @id @default(cuid())
+  name        String
+  channelUrl  String   @unique
+  platform    String   @default("youtube")
+  totalPicks  Int      @default(0)
+  wins        Int      @default(0)
+  losses      Int      @default(0)
+  avgClv      Float    @default(0)
+  roi         Float    @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  picks TipsterPick[]
+}
+
+model TipsterPick {
+  id            String    @id @default(cuid())
+  tipsterId     String
+  videoUrl      String    @default("")
+  description   String
+  sport         String    @default("futebol")
+  odds          Float
+  closingOdds   Float?
+  clv           Float?
+  evVerified    Boolean   @default(false)
+  evResult      Float?
+  outcome       String    @default("pending") // pending | won | lost | void
+  extractedAt   DateTime  @default(now())
+  settledAt     DateTime?
+
+  tipster Tipster @relation(fields: [tipsterId], references: [id], onDelete: Cascade)
+
+  @@index([tipsterId])
+  @@index([outcome])
 }
