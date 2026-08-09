@@ -19,7 +19,7 @@ export default async function DashboardPage() {
             Value Bets do Dia
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
-            Apostas com valor esperado positivo detectadas pelo motor de EV.
+            Apostas com EV+ na Sportingbet, todos os esportes.
             Odds comparadas com referência sharp (Pinnacle) ou média do mercado.
           </p>
         </div>
@@ -61,7 +61,7 @@ export default async function DashboardPage() {
           <h3 className="text-lg font-medium">Nenhuma value bet encontrada</h3>
           <p className="text-sm text-muted-foreground mt-2 max-w-md mx-auto">
             {apiConfigured
-              ? 'Clique em "Atualizar Odds" para buscar as odds mais recentes e detectar value bets.'
+              ? 'Clique em "Atualizar Odds" para buscar as odds mais recentes da Sportingbet em todos os esportes.'
               : "Configure a API key para começar a buscar odds automaticamente."}
           </p>
         </div>

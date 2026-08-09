@@ -5,23 +5,14 @@ import {
   fetchOdds,
   fetchSports,
   isSharpBookmaker,
+  isTargetBookmaker,
   mapSelectionName,
+  TARGET_BOOKMAKER_TITLE,
 } from "@/lib/odds-api";
 import { findValueBets, type OddsEntry } from "@/lib/value-engine";
 import { revalidatePath } from "next/cache";
 
 const API_KEY = process.env.THE_ODDS_API_KEY ?? "";
-
-const SPORT_KEYS = [
-  "soccer_brazil_serie_a",
-  "soccer_brazil_serie_b",
-  "soccer_epl",
-  "soccer_spain_la_liga",
-  "soccer_italy_serie_a",
-  "soccer_germany_bundesliga",
-  "soccer_france_ligue_one",
-  "soccer_uefa_champs_league",
-];
 
 export async function refreshOdds(sportKey?: string) {
   if (!API_KEY) {
@@ -30,7 +21,14 @@ export async function refreshOdds(sportKey?: string) {
     );
   }
 
-  const sportsToFetch = sportKey ? [sportKey] : SPORT_KEYS;
+  let sportsToFetch: string[];
+  if (sportKey) {
+    sportsToFetch = [sportKey];
+  } else {
+    const allSports = await fetchSports(API_KEY);
+    sportsToFetch = allSports.filter((s) => s.active).map((s) => s.key);
+  }
+
   let totalEvents = 0;
   let totalValueBets = 0;
 
@@ -39,10 +37,19 @@ export async function refreshOdds(sportKey?: string) {
       const events = await fetchOdds(API_KEY, sport);
 
       for (const event of events) {
+        const hasSportingbet = event.bookmakers.some((b) =>
+          isTargetBookmaker(b.key)
+        );
+        if (!hasSportingbet) continue;
+
+        const sportLabel = sport.startsWith("soccer")
+          ? "futebol"
+          : sport.split("_")[0];
+
         const match = await prisma.match.upsert({
           where: {
             sport_league_homeTeam_awayTeam_startTime: {
-              sport: sport.startsWith("soccer") ? "futebol" : sport,
+              sport: sportLabel,
               league: event.sport_title,
               homeTeam: event.home_team,
               awayTeam: event.away_team,
@@ -50,7 +57,7 @@ export async function refreshOdds(sportKey?: string) {
             },
           },
           create: {
-            sport: sport.startsWith("soccer") ? "futebol" : sport,
+            sport: sportLabel,
             league: event.sport_title,
             homeTeam: event.home_team,
             awayTeam: event.away_team,
@@ -92,7 +99,7 @@ export async function refreshOdds(sportKey?: string) {
           }
         }
 
-        const valueBetCandidates = findValueBets(oddsEntries);
+        const valueBetCandidates = findValueBets(oddsEntries, 100, TARGET_BOOKMAKER_TITLE);
         for (const vb of valueBetCandidates) {
           await prisma.valueBet.create({
             data: {

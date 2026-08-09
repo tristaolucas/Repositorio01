@@ -27,7 +27,8 @@ export function computeFairProbabilities(
 
 export function findValueBets(
   allOdds: OddsEntry[],
-  stakeReference = 100
+  stakeReference = 100,
+  targetBookmaker?: string
 ): ValueBetCandidate[] {
   const selections = [...new Set(allOdds.map((o) => o.selection))];
 
@@ -62,20 +63,21 @@ export function findValueBets(
     });
     const fairProbs = computeFairProbabilities(allBySelection);
 
-    return findValueFromFairProbs(fairProbs, selections, allOdds, stakeReference);
+    return findValueFromFairProbs(fairProbs, selections, allOdds, stakeReference, targetBookmaker);
   }
 
   const sharpAvgOdds = sharpOddsPerSelection as number[];
   const fairProbs = computeFairProbabilities(sharpAvgOdds);
 
-  return findValueFromFairProbs(fairProbs, selections, allOdds, stakeReference);
+  return findValueFromFairProbs(fairProbs, selections, allOdds, stakeReference, targetBookmaker);
 }
 
 function findValueFromFairProbs(
   fairProbs: number[],
   selections: string[],
   allOdds: OddsEntry[],
-  stakeReference: number
+  stakeReference: number,
+  targetBookmaker?: string
 ): ValueBetCandidate[] {
   const valueBets: ValueBetCandidate[] = [];
 
@@ -83,9 +85,14 @@ function findValueFromFairProbs(
     const sel = selections[i];
     const fairProb = fairProbs[i];
 
-    const softEntries = allOdds.filter(
+    let softEntries = allOdds.filter(
       (o) => o.selection === sel && !o.isSharp
     );
+    if (targetBookmaker) {
+      softEntries = softEntries.filter(
+        (o) => o.bookmaker.toLowerCase().includes(targetBookmaker.toLowerCase())
+      );
+    }
 
     for (const entry of softEntries) {
       if (!isValueBet(entry.odds, fairProb)) continue;
