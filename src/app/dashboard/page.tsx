@@ -19,8 +19,8 @@ export default async function DashboardPage() {
             Value Bets do Dia
           </h2>
           <p className="text-sm text-muted-foreground mt-1">
-            Apostas com EV+ na Sportingbet, todos os esportes.
-            Odds comparadas com referência sharp (Pinnacle) ou média do mercado.
+            Apostas com EV+ para fazer na Sportingbet. Confira a odd na
+            Sportingbet — se for igual ou maior, aposte.
           </p>
         </div>
         {apiConfigured && <RefreshButton />}

@@ -39,12 +39,7 @@ const SPORT_MAP: Record<string, string> = {
 
 const SHARP_BOOKMAKERS = ["pinnacle", "betfair_ex_eu", "matchbook"];
 
-export const TARGET_BOOKMAKER_KEY = "sportingbet";
-export const TARGET_BOOKMAKER_TITLE = "Sportingbet";
-
-export function isTargetBookmaker(key: string): boolean {
-  return key.toLowerCase().includes(TARGET_BOOKMAKER_KEY);
-}
+export const TARGET_BOOKMAKER = "Sportingbet";
 
 export function isSharpBookmaker(key: string): boolean {
   return SHARP_BOOKMAKERS.includes(key.toLowerCase());

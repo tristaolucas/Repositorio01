@@ -5,9 +5,7 @@ import {
   fetchOdds,
   fetchSports,
   isSharpBookmaker,
-  isTargetBookmaker,
   mapSelectionName,
-  TARGET_BOOKMAKER_TITLE,
 } from "@/lib/odds-api";
 import { findValueBets, type OddsEntry } from "@/lib/value-engine";
 import { revalidatePath } from "next/cache";
@@ -26,7 +24,9 @@ export async function refreshOdds(sportKey?: string) {
     sportsToFetch = [sportKey];
   } else {
     const allSports = await fetchSports(API_KEY);
-    sportsToFetch = allSports.filter((s) => s.active).map((s) => s.key);
+    sportsToFetch = allSports
+      .filter((s) => s.active && !s.key.includes("winner") && !s.key.includes("politics"))
+      .map((s) => s.key);
   }
 
   let totalEvents = 0;
@@ -37,11 +37,6 @@ export async function refreshOdds(sportKey?: string) {
       const events = await fetchOdds(API_KEY, sport);
 
       for (const event of events) {
-        const hasSportingbet = event.bookmakers.some((b) =>
-          isTargetBookmaker(b.key)
-        );
-        if (!hasSportingbet) continue;
-
         const sportLabel = sport.startsWith("soccer")
           ? "futebol"
           : sport.split("_")[0];
@@ -99,7 +94,7 @@ export async function refreshOdds(sportKey?: string) {
           }
         }
 
-        const valueBetCandidates = findValueBets(oddsEntries, 100, TARGET_BOOKMAKER_TITLE);
+        const valueBetCandidates = findValueBets(oddsEntries);
         for (const vb of valueBetCandidates) {
           await prisma.valueBet.create({
             data: {
