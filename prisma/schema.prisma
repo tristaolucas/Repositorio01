@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Freebet {
+  id        String   @id @default(cuid())
+  name      String
+  faceValue Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  selections FreebetSelection[]
+  decision   FreebetDecision?
+}
+
+model FreebetSelection {
+  id          String  @id @default(cuid())
+  description String
+  freebetId   String
+  odds        Float
+  impliedProb Float
+  ev          Float
+
+  freebet Freebet @relation(fields: [freebetId], references: [id], onDelete: Cascade)
+
+  @@index([freebetId])
+}
+
+model FreebetDecision {
+  id           String   @id @default(cuid())
+  freebetId    String   @unique
+  selectionId  String
+  chosenAt     DateTime @default(now())
+
+  freebet Freebet @relation(fields: [freebetId], references: [id], onDelete: Cascade)
+}
