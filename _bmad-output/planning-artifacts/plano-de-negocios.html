@@ -1,0 +1,426 @@
+<title>Distribuidora Terça Verde</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #F5F8EF;
+    --surface: #FFFFFF;
+    --surface-2: #EDF2E3;
+    --ink: #1B2917;
+    --ink-soft: #4C583F;
+    --ink-faint: #6E7A61;
+    --line: #DBE3CD;
+    --line-strong: #C4D0B0;
+    --accent: #2E6B41;
+    --accent-strong: #245334;
+    --accent-tint: #E2EEDD;
+    --data: #BC5324;
+    --data-tint: #F6E7DA;
+    --shadow: 0 1px 2px rgba(27,41,23,.05), 0 8px 24px -12px rgba(27,41,23,.18);
+    --radius: 14px;
+    --maxw: 940px;
+    --readw: 720px;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      color-scheme: dark;
+      --bg: #10140D;
+      --surface: #191E13;
+      --surface-2: #212819;
+      --ink: #E9F0DE;
+      --ink-soft: #AEB9A1;
+      --ink-faint: #808B72;
+      --line: #2C3623;
+      --line-strong: #3B472F;
+      --accent: #74C285;
+      --accent-strong: #93D3A1;
+      --accent-tint: #1E2A18;
+      --data: #E89463;
+      --data-tint: #2A2016;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #10140D;
+    --surface: #191E13;
+    --surface-2: #212819;
+    --ink: #E9F0DE;
+    --ink-soft: #AEB9A1;
+    --ink-faint: #808B72;
+    --line: #2C3623;
+    --line-strong: #3B472F;
+    --accent: #74C285;
+    --accent-strong: #93D3A1;
+    --accent-tint: #1E2A18;
+    --data: #E89463;
+    --data-tint: #2A2016;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif {
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
+  }
+  h1, h2, h3 {
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    text-wrap: balance;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  p { text-wrap: pretty; }
+  a { color: var(--accent); }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+  .flow > * + * { margin-top: 1em; }
+
+  /* ---- Top bar ---- */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar .row {
+    max-width: var(--maxw); margin: 0 auto; padding: 11px 22px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: .01em; }
+  .leafmark { width: 26px; height: 26px; flex: none; }
+  .brand small { display:block; font-weight: 500; color: var(--ink-faint); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+  .spacer { flex: 1; }
+  .themetoggle {
+    appearance: none; border: 1px solid var(--line-strong); background: var(--surface);
+    color: var(--ink-soft); border-radius: 999px; padding: 7px 12px; font-size: 13px;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 7px; font-family: inherit;
+  }
+  .themetoggle:hover { border-color: var(--accent); color: var(--accent); }
+  .themetoggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ---- Hero ---- */
+  .hero { padding: 62px 0 30px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 20px;
+  }
+  .eyebrow::before { content:""; width: 26px; height: 1.5px; background: var(--accent); display:inline-block; }
+  .hero h1 { font-size: clamp(2.3rem, 6vw, 3.5rem); margin: 0 0 .35em; font-weight: 600; }
+  .hero .lede { font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--ink-soft); max-width: 40ch; margin: 0; }
+  .metaline {
+    margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px 22px;
+    font-size: 13.5px; color: var(--ink-faint);
+  }
+  .metaline span { display: inline-flex; align-items: center; gap: 7px; }
+  .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); display:inline-block; }
+
+  /* ---- Stat tiles ---- */
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+    margin: 40px 0 8px;
+  }
+  .stat {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 20px 18px; box-shadow: var(--shadow);
+  }
+  .stat .k { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
+  .stat .v { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 2rem; font-weight: 600; margin: 10px 0 2px; color: var(--data); font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+  .stat .s { font-size: 13px; color: var(--ink-soft); }
+  .stat.green .v { color: var(--accent); }
+
+  /* ---- Sections ---- */
+  section.blk { padding: 30px 0; border-top: 1px solid var(--line); }
+  section.blk:first-of-type { border-top: none; }
+  .kicker { display: flex; align-items: baseline; gap: 14px; margin-bottom: 8px; }
+  .num { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 15px; color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+  .blk h2 { font-size: clamp(1.5rem, 3.4vw, 2rem); margin: 0; font-weight: 600; }
+  .blk .body { max-width: var(--readw); color: var(--ink-soft); }
+  .blk .body p { margin: .9em 0; }
+  .blk .body strong { color: var(--ink); font-weight: 650; }
+
+  .lead-callout {
+    border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; margin: 20px 0;
+    font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 1.25rem;
+    line-height: 1.4; color: var(--ink); font-style: italic; max-width: var(--readw);
+  }
+
+  /* ---- Cards grid ---- */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 14px; margin-top: 22px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+  .card h3 { font-size: 1.08rem; margin: 0 0 6px; display: flex; align-items: center; gap: 9px; }
+  .card p { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
+  .card .ic { width: 22px; height: 22px; flex: none; color: var(--accent); }
+
+  /* ---- Tables ---- */
+  .tablewrap { overflow-x: auto; margin: 22px 0; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; min-width: 460px; }
+  caption { text-align: left; padding: 14px 18px 0; font-size: 13px; color: var(--ink-faint); }
+  th, td { padding: 11px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  thead th { font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; background: var(--surface-2); }
+  tbody tr:last-child td { border-bottom: none; }
+  td.num-cell, th.num-cell { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.total td { font-weight: 700; color: var(--ink); background: var(--accent-tint); }
+  tr.total td.num-cell { color: var(--accent); }
+  .chip { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .chip.g { background: var(--accent-tint); color: var(--accent-strong); }
+  .chip.o { background: var(--data-tint); color: var(--data); }
+
+  /* ---- Flow (ciclo semanal) ---- */
+  .flowline { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 12px; margin-top: 22px; counter-reset: step; }
+  .step { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 16px 16px; box-shadow: var(--shadow); }
+  .step::before { counter-increment: step; content: counter(step); font-family: "Iowan Old Style", Palatino, Georgia, serif; font-weight: 700; font-size: 13px; color: var(--surface); background: var(--accent); width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 12px; }
+  .step h4 { margin: 0 0 4px; font-size: 14.5px; }
+  .step p { margin: 0; font-size: 13px; color: var(--ink-soft); }
+
+  /* ---- Timeline ---- */
+  .phases { margin-top: 22px; display: grid; gap: 12px; }
+  .phase { display: grid; grid-template-columns: 116px 1fr; gap: 18px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); }
+  .phase .tag { font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--accent); text-transform: uppercase; }
+  .phase .when { font-size: 12.5px; color: var(--ink-faint); margin-top: 3px; }
+  .phase h4 { margin: 0 0 5px; font-size: 1.05rem; }
+  .phase p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+
+  /* ---- Checklist ---- */
+  .checks { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 10px 24px; max-width: var(--readw); }
+  .checks li { position: relative; padding-left: 30px; font-size: 14.5px; color: var(--ink-soft); }
+  .checks li::before { content:""; position: absolute; left: 0; top: 3px; width: 18px; height: 18px; border: 1.5px solid var(--line-strong); border-radius: 5px; }
+
+  .disclaimer { font-size: 13.5px; color: var(--ink-faint); background: var(--surface-2); border: 1px dashed var(--line-strong); border-radius: var(--radius); padding: 14px 18px; margin: 20px 0; max-width: var(--readw); }
+  .disclaimer strong { color: var(--data); }
+
+  footer { border-top: 1px solid var(--line); margin-top: 20px; padding: 34px 0 60px; color: var(--ink-faint); font-size: 13.5px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; }
+
+  @media (max-width: 720px) {
+    .stats { grid-template-columns: repeat(2,1fr); }
+    .phase { grid-template-columns: 1fr; gap: 6px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .stat, .card, .step, .phase { transition: transform .18s ease, border-color .18s ease; }
+    .card:hover, .stat:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+  }
+</style>
+
+<div class="topbar">
+  <div class="row">
+    <span class="brand">
+      <svg class="leafmark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 21c-5-1-8-5-8-11 0-.6.4-1 1-1 6 0 10 3 11 8" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M20 4c-8 0-12 4-13 10 5-1 8-4 9-7" fill="var(--accent-tint)" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <span>Terça Verde<small>Plano de Negócios</small></span>
+    </span>
+    <span class="spacer"></span>
+    <button class="themetoggle" id="themeBtn" aria-label="Alternar tema claro e escuro">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span id="themeLabel">Tema</span>
+    </button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Distribuidora de Hortifruti · Litoral Sul do ES</span>
+    <h1 class="serif">Da feira do CEASA<br>direto pra cozinha do cliente.</h1>
+    <p class="lede">Uma distribuidora B2B que transforma ativos que já existem — o caminhão, a viagem ao CEASA e o poder de compra do supermercado — em uma nova fonte de receita, com preço, qualidade e regularidade.</p>
+    <div class="metaline">
+      <span><span class="dot"></span>Sede em Anchieta/ES</span>
+      <span><span class="dot"></span>Abastecimento no CEASA‑ES (Cariacica)</span>
+      <span><span class="dot"></span>Atende Anchieta · Guarapari · Piúma · Iconha</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="k">Investimento inicial</div>
+        <div class="v">R$10–35 mil</div>
+        <div class="s">vs. R$100–500 mil da média do setor</div>
+      </div>
+      <div class="stat">
+        <div class="k">Payback estimado</div>
+        <div class="v">2–3 meses</div>
+        <div class="s">setor costuma levar 18–36 meses</div>
+      </div>
+      <div class="stat green">
+        <div class="k">Margem praticável</div>
+        <div class="v">40%</div>
+        <div class="s">ainda abaixo do que o cliente paga hoje</div>
+      </div>
+      <div class="stat green">
+        <div class="k">Concorrência direta</div>
+        <div class="v">Nenhuma</div>
+        <div class="s">ninguém atende esse público na região</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="blk">
+    <div class="kicker"><span class="num">01</span><h2 class="serif">A oportunidade</h2></div>
+    <div class="body flow">
+      <p>A promoção <strong>“Terça Verde”</strong> foi criada para o consumidor final — a compra da semana, a cesta do mês. Mas quem vem aproveitando os preços imbatíveis são donos de <strong>restaurantes, hotéis, pousadas, hospitais e escolas</strong>, que levam caixas e sacos fechados. Esse público não é o alvo da promoção — e, ainda assim, <strong>não tem nenhum fornecedor especializado</strong> que o atenda na região.</p>
+      <p>Ou seja: existe uma <strong>demanda de volume reprimida</strong>, tão forte que “invade” uma promoção de varejo. Em vez de um problema, isso é um produto esperando para nascer.</p>
+      <div class="lead-callout">“O preço do CEASA, entregue na sua porta, com a qualidade e a regularidade de quem já abastece um supermercado.”</div>
+      <p>O trunfo é que a operação nasce sobre ativos que <strong>já existem</strong>: o sogro já vai ao CEASA três vezes por semana, o caminhão está ocioso, o supermercado tem poder de compra, capital de giro e equipe. A mesma barreira que protege o negócio de concorrentes é a que o torna barato de começar.</p>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="kicker"><span class="num">02</span><h2 class="serif">O mercado</h2></div>
+    <div class="body flow">
+      <p>As quatro cidades formam o <strong>litoral sul do ES</strong> — um polo turístico. Guarapari salta de ~123 mil habitantes fixos para <strong>1 a 1,5 milhão de pessoas no verão</strong>, movimentando hotelaria, gastronomia e serviços. O mercado de <em>food service</em> no Brasil é grande e cresce, com o hortifruti em destaque e a escolha do fornecedor cada vez mais estratégica.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><h3><svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M4 20V9l8-5 8 5v11" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="1.6"/></svg>Restaurantes</h3><p>Preço e frescor diário. Maioria independente, decisão rápida.</p></div>
+      <div class="card"><h3><svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-3 7 3v14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 10h.01M12 10h.01M15 10h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Hotéis & Pousadas</h3><p>Volume e regularidade no verão. Sazonalidade turística forte.</p></div>
+      <div class="card"><h3><svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/></svg>Hospitais & Clínicas</h3><p>Demanda <strong>estável o ano todo</strong> — ótima para equilibrar a baixa temporada.</p></div>
+      <div class="card"><h3><svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M3 8l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 10v5c0 1 2.2 2.5 5 2.5s5-1.5 5-2.5v-5" stroke="currentColor" stroke-width="1.6"/></svg>Escolas & Refeição coletiva</h3><p>Volume programado e maiores tickets. Demanda mais previsível.</p></div>
+    </div>
+    <p class="body" style="margin-top:18px;font-size:14.5px;"><strong>Estratégia de mix:</strong> equilibrar clientes sazonais (hotéis e restaurantes de veraneio) com clientes de demanda constante (hospitais, escolas, refeição coletiva) para suavizar a receita fora do verão.</p>
+  </section>
+
+  <section class="blk">
+    <div class="kicker"><span class="num">03</span><h2 class="serif">Por que ninguém faz — e nós conseguimos</h2></div>
+    <div class="cards">
+      <div class="card"><h3>Preço no piso</h3><p>O poder de compra do supermercado no CEASA coloca o custo no menor patamar do mercado.</p></div>
+      <div class="card"><h3>Frete quase de graça</h3><p>A viagem ao CEASA já acontece 3× por semana. O custo logístico da compra é marginal.</p></div>
+      <div class="card"><h3>Regularidade real</h3><p>Calendário fixo (seg/ter/qui) e a estrutura de um supermercado por trás da entrega.</p></div>
+      <div class="card"><h3>Curadoria de qualidade</h3><p>Quem já seleciona hortifruti para um supermercado sabe escolher o melhor produto.</p></div>
+      <div class="card"><h3>Perdas mínimas</h3><p>Modelo <strong>sob encomenda</strong>: compra‑se só o que já foi vendido. Ataca o maior vilão do setor (perdas de até 30%).</p></div>
+      <div class="card"><h3>Confiança local</h3><p>Nome conhecido e reputação já construída na região.</p></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="kicker"><span class="num">04</span><h2 class="serif">Como a operação funciona</h2></div>
+    <p class="body">Um ciclo semanal simples, encaixado nas idas que já acontecem ao CEASA:</p>
+    <div class="flowline">
+      <div class="step"><h4>Pedidos</h4><p>Clientes enviam o pedido na véspera (WhatsApp, planilha ou app).</p></div>
+      <div class="step"><h4>Consolidação</h4><p>Todos os pedidos viram uma lista única de compra.</p></div>
+      <div class="step"><h4>Compra no CEASA</h4><p>Compra do supermercado + o volume dos pedidos, de uma vez.</p></div>
+      <div class="step"><h4>Separação</h4><p>Conferência e separação por cliente, com a equipe do supermercado.</p></div>
+      <div class="step"><h4>Entrega & cobrança</h4><p>Caminhão nas rotas do litoral sul; faturamento na sequência.</p></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="kicker"><span class="num">05</span><h2 class="serif">Os números</h2></div>
+    <div class="disclaimer"><strong>Leia com atenção:</strong> os valores abaixo são estimativas ilustrativas, baseadas na margem de 40% e em referências de mercado. O ticket médio e o número de clientes ainda serão validados em campo. Servem para mostrar a ordem de grandeza e a lógica de viabilidade — não são uma previsão exata.</div>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Cenários de faturamento (em regime, após ~3 meses de rampa)</caption>
+        <thead><tr><th>Cenário</th><th class="num-cell">Clientes</th><th class="num-cell">Ticket médio/sem.</th><th class="num-cell">Faturamento/mês</th><th class="num-cell">Lucro op./mês (est.)</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip o">Conservador</span></td><td class="num-cell">~12</td><td class="num-cell">R$ 700</td><td class="num-cell">~R$ 36.000</td><td class="num-cell">~R$ 3.100</td></tr>
+          <tr><td><span class="chip g">Realista</span></td><td class="num-cell">~25</td><td class="num-cell">R$ 1.000</td><td class="num-cell">~R$ 107.000</td><td class="num-cell">~R$ 10.500</td></tr>
+          <tr><td><span class="chip g">Otimista</span></td><td class="num-cell">~45</td><td class="num-cell">R$ 1.200</td><td class="num-cell">~R$ 232.000</td><td class="num-cell">~R$ 20.600</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <caption>DRE mensal simplificada — cenário Realista (R$ 107.000)</caption>
+        <thead><tr><th>Linha</th><th class="num-cell">Valor (R$)</th><th class="num-cell">% receita</th></tr></thead>
+        <tbody>
+          <tr><td>Receita de vendas</td><td class="num-cell">107.000</td><td class="num-cell">100,0%</td></tr>
+          <tr><td>(–) Custo da mercadoria (compra CEASA)</td><td class="num-cell">76.429</td><td class="num-cell">71,4%</td></tr>
+          <tr class="total"><td>(=) Margem bruta</td><td class="num-cell">30.571</td><td class="num-cell">28,6%</td></tr>
+          <tr><td>(–) Perdas (~5% do custo)</td><td class="num-cell">3.821</td><td class="num-cell">3,6%</td></tr>
+          <tr><td>(–) Impostos (~6% receita)*</td><td class="num-cell">6.420</td><td class="num-cell">6,0%</td></tr>
+          <tr><td>(–) Combustível / logística incremental</td><td class="num-cell">2.500</td><td class="num-cell">2,3%</td></tr>
+          <tr><td>(–) Mão de obra dedicada</td><td class="num-cell">4.500</td><td class="num-cell">4,2%</td></tr>
+          <tr><td>(–) Embalagens / insumos</td><td class="num-cell">1.800</td><td class="num-cell">1,7%</td></tr>
+          <tr><td>(–) Outros (telefone, sistema, misc.)</td><td class="num-cell">1.000</td><td class="num-cell">0,9%</td></tr>
+          <tr class="total"><td>(=) Lucro operacional</td><td class="num-cell">~10.500</td><td class="num-cell">~9,8%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="body" style="font-size:13px;color:var(--ink-faint);">* Enquadramento tributário a confirmar com contador (Simples Nacional). O investimento inicial (~R$ 10–35 mil) cobre formalização, embalagens, licenças sanitárias e marketing — o capital de giro da compra vem do supermercado.</p>
+  </section>
+
+  <section class="blk">
+    <div class="kicker"><span class="num">06</span><h2 class="serif">Riscos & mitigações</h2></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Risco</th><th>Como mitigamos</th></tr></thead>
+        <tbody>
+          <tr><td>Sazonalidade (queda no inverno)</td><td>Mix com clientes de demanda estável: hospitais, escolas, refeição coletiva.</td></tr>
+          <tr><td>Perdas de produto</td><td>Modelo sob encomenda + conferência na origem + giro rápido, sem estoque parado.</td></tr>
+          <tr><td>Inadimplência B2B</td><td>Política de crédito clara; começar à vista / prazo curto; cadastro dos clientes.</td></tr>
+          <tr><td>Quebra de qualidade ou pontualidade</td><td>Padrão de seleção do supermercado; calendário fixo; compromisso de entrega.</td></tr>
+          <tr><td>Dependência de pessoa‑chave</td><td>Documentar o processo de compra e formar um segundo comprador.</td></tr>
+          <tr><td>Canibalizar o supermercado</td><td>Público diferente (B2B × consumidor final): é complementar, não concorrente.</td></tr>
+          <tr><td>Concorrente copiando o modelo</td><td>Fidelizar cedo, ganhar escala e fechar contratos antes de aparecer imitador.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="kicker"><span class="num">07</span><h2 class="serif">O caminho</h2></div>
+    <div class="phases">
+      <div class="phase"><div><div class="tag">Fase 0</div><div class="when">Semanas 1–4</div></div><div><h4>Validação</h4><p>Levantar a lista de clientes‑alvo por cidade, visitar os mais promissores e fechar compromissos de pedido — validando ticket e volume reais. Confirmar exigências fiscais e sanitárias.</p></div></div>
+      <div class="phase"><div><div class="tag">Fase 1</div><div class="when">Mês 1–3</div></div><div><h4>Piloto enxuto</h4><p>Operar com WhatsApp/planilha, rodar 2–3 ciclos por semana com um grupo inicial de clientes e medir margem, perdas e satisfação reais.</p></div></div>
+      <div class="phase"><div><div class="tag">Fase 2</div><div class="when">Mês 3+</div></div><div><h4>Estruturação + Software</h4><p>Construir a plataforma: portal de pedidos B2B + painel interno de compras, logística e financeiro. Padronizar rotas, faturamento e cobrança. Escalar a base.</p></div></div>
+      <div class="phase"><div><div class="tag">Fase 3</div><div class="when">A seguir</div></div><div><h4>Expansão</h4><p>Ampliar o mix de itens, o número de cidades e a frota conforme a demanda comprovar o crescimento.</p></div></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="kicker"><span class="num">08</span><h2 class="serif">Próximos passos concretos</h2></div>
+    <p class="body">O que precisa ser levantado em campo para transformar as estimativas em números reais:</p>
+    <ul class="checks">
+      <li>Ticket médio semanal por tipo de cliente</li>
+      <li>Lista de estabelecimentos‑alvo por cidade</li>
+      <li>Volume e custo da “compra a mais” no CEASA</li>
+      <li>Custo de frete incremental</li>
+      <li>Capacidade do caminhão × demanda projetada</li>
+      <li>Enquadramento tributário (contador)</li>
+      <li>Exigências da vigilância sanitária</li>
+      <li>Política de crédito / prazo B2B</li>
+      <li>Nome e identidade visual do negócio</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Distribuidora Terça Verde · Plano de Negócios v1</span>
+    <span class="dot" style="background:var(--ink-faint)"></span>
+    <span>Documento vivo — atualizado conforme a validação de campo</span>
+    <span class="dot" style="background:var(--ink-faint)"></span>
+    <span>Agosto/2026</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('themeBtn');
+    var label = document.getElementById('themeLabel');
+    var root = document.documentElement;
+    function current() {
+      var t = root.getAttribute('data-theme');
+      if (t) return t;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function sync() { label.textContent = current() === 'dark' ? 'Claro' : 'Escuro'; }
+    btn.addEventListener('click', function () {
+      root.setAttribute('data-theme', current() === 'dark' ? 'light' : 'dark');
+      sync();
+    });
+    sync();
+  })();
+</script>
