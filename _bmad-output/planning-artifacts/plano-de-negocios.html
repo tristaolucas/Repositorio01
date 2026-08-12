@@ -2,22 +2,24 @@
 <style>
   :root {
     color-scheme: light;
-    --bg: #F5F8EF;
+    --bg: #FAF3E8;
     --surface: #FFFFFF;
-    --surface-2: #EDF2E3;
-    --ink: #1B2917;
-    --ink-soft: #4C583F;
-    --ink-faint: #6E7A61;
-    --line: #DBE3CD;
-    --line-strong: #C4D0B0;
-    --accent: #2E6B41;
-    --accent-strong: #245334;
-    --accent-tint: #E2EEDD;
-    --data: #BC5324;
-    --data-tint: #F6E7DA;
-    --warn: #A8791C;
-    --warn-tint: #F4EBD3;
-    --shadow: 0 1px 2px rgba(27,41,23,.05), 0 8px 24px -12px rgba(27,41,23,.18);
+    --surface-2: #F0E6D4;
+    --ink: #2B2D26;
+    --ink-soft: #5A5D4F;
+    --ink-faint: #8A8D7F;
+    --line: #E3D9C6;
+    --line-strong: #C8BDAA;
+    --accent: #2D6A4F;
+    --accent-strong: #23543E;
+    --accent-tint: #D8EDE4;
+    --leaf2: #74B49B;
+    --data: #E76F51;
+    --data-strong: #BF522E;
+    --data-tint: #F7E1D5;
+    --warn: #B0791C;
+    --warn-tint: #F3E7CE;
+    --shadow: 0 1px 2px rgba(43,45,38,.05), 0 8px 24px -12px rgba(43,45,38,.16);
     --radius: 14px;
     --maxw: 940px;
     --readw: 720px;
@@ -25,22 +27,24 @@
   :root:not([data-theme="light"]) {
     @media (prefers-color-scheme: dark) {
       color-scheme: dark;
-      --bg: #10140D; --surface: #191E13; --surface-2: #212819;
-      --ink: #E9F0DE; --ink-soft: #AEB9A1; --ink-faint: #808B72;
-      --line: #2C3623; --line-strong: #3B472F;
-      --accent: #74C285; --accent-strong: #93D3A1; --accent-tint: #1E2A18;
-      --data: #E89463; --data-tint: #2A2016;
+      --bg: #141712; --surface: #1C201A; --surface-2: #252A22;
+      --ink: #E4E8DC; --ink-soft: #A8AE9C; --ink-faint: #6E7466;
+      --line: #363D30; --line-strong: #454E3C;
+      --accent: #74B49B; --accent-strong: #93CBB3; --accent-tint: #1E2A22;
+      --leaf2: #4A9B7A;
+      --data: #E8936E; --data-strong: #E8936E; --data-tint: #2A2016;
       --warn: #D8B057; --warn-tint: #2A2413;
       --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
     }
   }
   :root[data-theme="dark"] {
     color-scheme: dark;
-    --bg: #10140D; --surface: #191E13; --surface-2: #212819;
-    --ink: #E9F0DE; --ink-soft: #AEB9A1; --ink-faint: #808B72;
-    --line: #2C3623; --line-strong: #3B472F;
-    --accent: #74C285; --accent-strong: #93D3A1; --accent-tint: #1E2A18;
-    --data: #E89463; --data-tint: #2A2016;
+    --bg: #141712; --surface: #1C201A; --surface-2: #252A22;
+    --ink: #E4E8DC; --ink-soft: #A8AE9C; --ink-faint: #6E7466;
+    --line: #363D30; --line-strong: #454E3C;
+    --accent: #74B49B; --accent-strong: #93CBB3; --accent-tint: #1E2A22;
+    --leaf2: #4A9B7A;
+    --data: #E8936E; --data-strong: #E8936E; --data-tint: #2A2016;
     --warn: #D8B057; --warn-tint: #2A2413;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
   }
@@ -62,7 +66,9 @@
   .topbar { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
   .topbar .row { max-width: var(--maxw); margin: 0 auto; padding: 11px 22px; display: flex; align-items: center; gap: 14px; }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: .01em; }
-  .leafmark { width: 26px; height: 26px; flex: none; }
+  .leafmark { width: 30px; height: 28px; flex: none; }
+  .hero-logo { margin-bottom: 26px; }
+  .hero-logo svg { width: 210px; max-width: 62vw; height: auto; }
   .brand small { display:block; font-weight: 500; color: var(--ink-faint); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
   .spacer { flex: 1; }
   .themetoggle { appearance: none; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-soft); border-radius: 999px; padding: 7px 12px; font-size: 13px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; font-family: inherit; }
@@ -114,7 +120,7 @@
   tr.total td.num-cell { color: var(--accent); }
   .chip { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; }
   .chip.g { background: var(--accent-tint); color: var(--accent-strong); }
-  .chip.o { background: var(--data-tint); color: var(--data); }
+  .chip.o { background: var(--data-tint); color: var(--data-strong); }
 
   .flowline { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 12px; margin-top: 22px; counter-reset: step; }
   .step { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 16px 16px; box-shadow: var(--shadow); }
@@ -147,7 +153,7 @@
   .tactics li::marker { color: var(--accent); }
 
   .disclaimer { font-size: 13.5px; color: var(--ink-faint); background: var(--surface-2); border: 1px dashed var(--line-strong); border-radius: var(--radius); padding: 14px 18px; margin: 18px 0; max-width: var(--readw); }
-  .disclaimer strong { color: var(--data); }
+  .disclaimer strong { color: var(--data-strong); }
 
   .checks { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 10px 24px; max-width: var(--readw); }
   .checks li { position: relative; padding-left: 30px; font-size: 14.5px; color: var(--ink-soft); }
@@ -169,9 +175,12 @@
 <div class="topbar">
   <div class="row">
     <span class="brand">
-      <svg class="leafmark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 21c-5-1-8-5-8-11 0-.6.4-1 1-1 6 0 10 3 11 8" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M20 4c-8 0-12 4-13 10 5-1 8-4 9-7" fill="var(--accent-tint)" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round"/>
+      <svg class="leafmark" viewBox="0 0 96 88" fill="none" aria-hidden="true">
+        <path d="M48 8 C28 8, 8 28, 8 56 C8 68, 16 78, 28 82 C32 60, 42 40, 48 8Z" fill="var(--accent)" opacity=".15"/>
+        <path d="M48 8 C28 8, 8 28, 8 56 C8 68, 16 78, 28 82 C32 60, 42 40, 48 8Z" fill="none" stroke="var(--accent)" stroke-width="2.6" stroke-linejoin="round"/>
+        <path d="M56 18 C76 18, 88 36, 84 58 C82 66, 76 72, 68 74 C66 54, 60 36, 56 18Z" fill="var(--leaf2)" opacity=".2"/>
+        <path d="M56 18 C76 18, 88 36, 84 58 C82 66, 76 72, 68 74 C66 54, 60 36, 56 18Z" fill="none" stroke="var(--leaf2)" stroke-width="2.2" stroke-linejoin="round"/>
+        <circle cx="48" cy="6" r="3.4" fill="var(--data)"/>
       </svg>
       <span>Terça Verde<small>Plano de Negócios</small></span>
     </span>
@@ -185,6 +194,21 @@
 
 <header class="hero">
   <div class="wrap">
+    <div class="hero-logo">
+      <svg viewBox="0 0 220 110" role="img" aria-label="Distribuidora Terça Verde">
+        <g transform="translate(62, 8)">
+          <path d="M48 8 C28 8, 8 28, 8 56 C8 68, 16 78, 28 82 C32 60, 42 40, 48 8Z" fill="var(--accent)" opacity=".15"/>
+          <path d="M48 8 C28 8, 8 28, 8 56 C8 68, 16 78, 28 82 C32 60, 42 40, 48 8Z" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M44 16 C36 30, 28 50, 22 72" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" opacity=".5"/>
+          <path d="M38 28 C34 34, 26 44, 18 54" fill="none" stroke="var(--accent)" stroke-width="1" stroke-linecap="round" opacity=".35"/>
+          <path d="M56 18 C76 18, 88 36, 84 58 C82 66, 76 72, 68 74 C66 54, 60 36, 56 18Z" fill="var(--leaf2)" opacity=".2"/>
+          <path d="M56 18 C76 18, 88 36, 84 58 C82 66, 76 72, 68 74 C66 54, 60 36, 56 18Z" fill="none" stroke="var(--leaf2)" stroke-width="1.8" stroke-linejoin="round"/>
+          <circle cx="48" cy="6" r="3" fill="var(--data)"/>
+        </g>
+        <text x="110" y="98" text-anchor="middle" font-family="'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Georgia,serif" font-size="18" font-weight="700" fill="var(--ink)" letter-spacing=".5">TERÇA VERDE</text>
+        <text x="110" y="109" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7.5" fill="var(--ink-faint)" letter-spacing="3.5">DISTRIBUIDORA</text>
+      </svg>
+    </div>
     <span class="eyebrow">Distribuidora de Hortifruti · Litoral Sul do ES</span>
     <h1 class="serif">Da feira do CEASA<br>direto pra cozinha do cliente.</h1>
     <p class="lede">Uma distribuidora B2B que aproveita rotinas que já existem — as viagens ao CEASA e o poder de compra de um supermercado — para levar hortifruti a restaurantes, pousadas, quiosques, hospitais e escolas, com preço, qualidade e regularidade.</p>
@@ -416,7 +440,7 @@
 
 <footer>
   <div class="wrap">
-    <span>Distribuidora Terça Verde · Plano de Negócios v3</span>
+    <span>Distribuidora Terça Verde · Plano de Negócios v4</span>
     <span class="dot" style="background:var(--ink-faint)"></span>
     <span>Documento vivo — atualizado conforme a validação de campo</span>
     <span class="dot" style="background:var(--ink-faint)"></span>

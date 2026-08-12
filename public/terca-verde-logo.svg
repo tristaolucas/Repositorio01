@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="110" viewBox="0 0 220 110" role="img" aria-label="Logo Distribuidora Terça Verde">
+  <g transform="translate(62, 8)">
+    <path d="M48 8 C28 8, 8 28, 8 56 C8 68, 16 78, 28 82 C32 60, 42 40, 48 8Z" fill="#2D6A4F" opacity=".15"/>
+    <path d="M48 8 C28 8, 8 28, 8 56 C8 68, 16 78, 28 82 C32 60, 42 40, 48 8Z" fill="none" stroke="#2D6A4F" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M44 16 C36 30, 28 50, 22 72" fill="none" stroke="#2D6A4F" stroke-width="1.4" stroke-linecap="round" opacity=".5"/>
+    <path d="M38 28 C34 34, 26 44, 18 54" fill="none" stroke="#2D6A4F" stroke-width="1" stroke-linecap="round" opacity=".35"/>
+    <path d="M56 18 C76 18, 88 36, 84 58 C82 66, 76 72, 68 74 C66 54, 60 36, 56 18Z" fill="#74B49B" opacity=".2"/>
+    <path d="M56 18 C76 18, 88 36, 84 58 C82 66, 76 72, 68 74 C66 54, 60 36, 56 18Z" fill="none" stroke="#74B49B" stroke-width="1.8" stroke-linejoin="round"/>
+    <circle cx="48" cy="6" r="3" fill="#E76F51"/>
+  </g>
+  <text x="110" y="98" text-anchor="middle" font-family="'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Georgia,serif" font-size="18" font-weight="700" fill="#2B2D26" letter-spacing=".5">TERÇA VERDE</text>
+  <text x="110" y="109" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7.5" fill="#8A8D7F" letter-spacing="3.5">DISTRIBUIDORA</text>
+</svg>

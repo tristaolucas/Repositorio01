@@ -1,10 +1,11 @@
-# Plano de Negócios — Distribuidora de Hortifrutigranjeiros (Litoral Sul do ES)
+# Plano de Negócios — Distribuidora Terça Verde
 
-> **Nome de trabalho:** _(a definir — ver sugestões na seção 13)_
+> **Marca:** Distribuidora Terça Verde 🌿 _(identidade visual definida — ver Manual de Identidade e `public/terca-verde-logo.svg`)_
 > **Sede / largada:** Anchieta/ES · **Fonte de abastecimento:** CEASA-ES (Cariacica/ES)
 > **Modelo:** Distribuição B2B de hortifruti sob encomenda
+> **Proposta de valor:** _"Do CEASA direto pra sua cozinha."_
 > **Estratégia geográfica:** começar **só em Anchieta** (aprender e estabilizar) → depois expandir para Guarapari, Piúma e Iconha
-> **Status do documento:** v3 — rascunho para validação
+> **Status do documento:** v4 — rascunho para validação
 > **Data:** Agosto/2026
 
 ---
@@ -291,13 +292,17 @@ Quando o piloto validar o negócio, o sistema terá dois lados:
 
 ---
 
-## 13. Identidade / Nome (sugestões iniciais)
-- **Terça Verde Distribuidora** (aproveita a marca famosa da promoção)
-- **Verde Direto** / **Direto do CEASA**
-- **HortiSul** / **Hortifruti Litoral Sul**
-- **Cesta Verde Distribuidora** · **Raiz Hortifruti**
+## 13. Identidade da Marca ✅
+A marca foi definida: **Distribuidora Terça Verde**, ancorada na promoção já famosa na região — o que acelera a confiança do cliente.
 
-> Se a "Terça Verde" já é reconhecida na região, ancorar a marca nela pode acelerar a confiança do cliente.
+**Manual de Identidade Visual criado**, com:
+- **Logomarca:** duas folhas sobrepostas (frescor + parceria) com um ponto laranja de energia; nome em serifa clássica + "DISTRIBUIDORA" em caixa alta (B2B).
+- **Paleta:** Verde Folha `#2D6A4F` (principal), Verde Claro `#74B49B`, Verde Pálido `#D8EDE4`, Laranja Cítrico `#E76F51` (destaque), Creme Natural `#FAF3E8` (fundo), Grafite `#2B2D26` (texto).
+- **Tipografia:** serifa (Georgia/Palatino) para títulos; sans (system-ui) para corpo.
+- **Proposta de valor:** _"Do CEASA direto pra sua cozinha."_
+- **Aplicações:** cartão de visita, assinatura de e-mail, regras de uso.
+
+**Ativos no repositório:** `public/terca-verde-logo.svg` (logo completa) e `public/terca-verde-icon.svg` (só o ícone). Este plano de negócios já adota a paleta e a logomarca da marca.
 
 ---
 
@@ -312,7 +317,7 @@ Quando o piloto validar o negócio, o sistema terá dois lados:
 - [ ] **Exigências da vigilância sanitária** para distribuição de alimentos
 - [ ] **Política de crédito/prazo** e **pedido mínimo**
 - [ ] **KPIs do piloto** definidos antes de começar
-- [ ] **Nome e identidade visual** do negócio
+- [x] ~~**Nome e identidade visual** do negócio~~ → **feito:** Distribuidora Terça Verde (logo + manual)
 
 ---
 
