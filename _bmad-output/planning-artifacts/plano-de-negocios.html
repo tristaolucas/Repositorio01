@@ -170,6 +170,16 @@
     .stat, .card, .step, .phase, .blind { transition: transform .18s ease, border-color .18s ease; }
     .card:hover, .stat:hover { transform: translateY(-2px); border-color: var(--line-strong); }
   }
+
+  @media print {
+    @page { size: A4; margin: 13mm 12mm; }
+    html, body { background: var(--bg); -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 13px; }
+    .topbar, .themetoggle { display: none !important; }
+    .hero { padding-top: 18px; }
+    section.blk, .card, .stat, .phase, .step, .blind, .tablewrap, .highlight, .pv-card, .disclaimer, .lead-callout { break-inside: avoid; }
+    .kicker, .subhead { break-after: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
 </style>
 
 <div class="topbar">
