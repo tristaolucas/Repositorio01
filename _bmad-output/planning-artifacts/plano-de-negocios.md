@@ -3,14 +3,17 @@
 > **Nome de trabalho:** _(a definir — ver sugestões na seção 11)_
 > **Sede:** Anchieta/ES · **Fonte de abastecimento:** CEASA-ES (Cariacica/ES)
 > **Modelo:** Distribuição B2B de hortifruti sob encomenda
-> **Status do documento:** v1 — rascunho para validação com a família/sócios
+> **Estratégia geográfica:** começar **só em Anchieta** (aprender e estabilizar) → depois expandir para Guarapari, Piúma e Iconha
+> **Status do documento:** v2 — rascunho para validação com a família/sócios
 > **Data:** Agosto/2026
 
 ---
 
 ## 1. Sumário Executivo
 
-Existe uma oportunidade clara e de baixo risco para transformar ativos **já existentes** da operação do supermercado da família em uma nova linha de receita: uma **distribuidora de hortifrutigranjeiros** voltada ao público **B2B** (restaurantes, hotéis, pousadas, hospitais, escolas e empresas que fornecem refeições) no **litoral sul do Espírito Santo** — Anchieta, Guarapari, Piúma e Iconha.
+Existe uma oportunidade clara e de baixo risco para transformar ativos **já existentes** da operação do supermercado da família em uma nova linha de receita: uma **distribuidora de hortifrutigranjeiros** voltada ao público **B2B** (restaurantes, hotéis, pousadas, hospitais, escolas e empresas que fornecem refeições) no **litoral sul do Espírito Santo**.
+
+> **Estratégia de entrada — começar por Anchieta.** A operação nasce **focada exclusivamente em Anchieta**: é onde fica a base, onde a curva de aprendizado é mais barata e onde dá para deixar o modelo rodando "redondo" (processo de pedido, compra, separação, entrega e cobrança) antes de esticar a logística. **Guarapari, Piúma e Iconha entram numa segunda etapa**, quando a operação já estiver comprovada e estável. Isso reduz o risco, concentra o aprendizado e evita crescer antes da hora.
 
 O insight nasceu de um problema real: a promoção **"Terça Verde"** do supermercado foi desenhada para o **consumidor final** (compra da semana/mês), mas vem sendo "consumida" por compradores de volume (donos de restaurantes, hotéis etc.) que levam caixas e sacos fechados. Esse público **não é o alvo** da promoção e, ainda assim, hoje **não tem nenhum fornecedor especializado** que o atenda na região — ele compra no varejo, pagando mais caro.
 
@@ -62,7 +65,7 @@ Ninguém mais na região reúne esses ativos. **A barreira de entrada que proteg
 2. Os pedidos são **consolidados** numa lista única de compra;
 3. O sogro compra no CEASA o volume do supermercado **+ o volume dos pedidos**;
 4. Na volta, a mercadoria é **separada por cliente** (equipe do supermercado);
-5. O **caminhão entrega** nas rotas Anchieta → Guarapari / Piúma / Iconha;
+5. O **caminhão entrega** nas rotas — **no início, apenas dentro de Anchieta** (raio curto, logística simples);
 6. Faturamento e cobrança (à vista ou a prazo, conforme política).
 
 **Proposta de valor ao cliente:** _"O preço do CEASA, entregue na sua porta, com a qualidade e a regularidade de quem já abastece um supermercado."_
@@ -82,10 +85,14 @@ Ninguém mais na região reúne esses ativos. **A barreira de entrada que proteg
 
 > **Estratégia de mix:** equilibrar clientes **sazonais** (hotéis/restaurantes de veraneio) com clientes de **demanda estável** (hospitais, escolas, refeição coletiva) para suavizar a receita fora do verão.
 
-### 4.2 Tamanho do mercado (regional)
-- **Guarapari:** ~123 mil habitantes fixos, mas **população flutuante de 1 a 1,5 milhão no verão** — um dos maiores polos turísticos do ES, com centenas de meios de hospedagem e forte estrutura de gastronomia.
-- **Anchieta, Piúma e Iconha:** cidades menores, também turísticas (litoral), com base própria de restaurantes, pousadas, escolas e serviços de saúde.
-- **Mercado de food service no Brasil:** grande e em crescimento (projeções de dezenas de bilhões de dólares/ano), com **hortifruti em destaque** e a **escolha de fornecedor** sendo cada vez mais estratégica.
+### 4.2 Tamanho do mercado (faseado por geografia)
+**Mercado inicial — Anchieta (foco da largada):** cidade turística de litoral, com base própria de restaurantes, pousadas, escolas, serviços de saúde e comércio. É o mercado onde a operação começa e amadurece. Suficiente para provar o modelo com risco baixo e logística simples (raio curto).
+
+**Mercado de expansão (2ª etapa):**
+- **Guarapari:** ~123 mil habitantes fixos, mas **população flutuante de 1 a 1,5 milhão no verão** — um dos maiores polos turísticos do ES, com centenas de meios de hospedagem e forte estrutura de gastronomia. É o **grande prêmio** da expansão.
+- **Piúma e Iconha:** cidades menores, também no litoral/entorno, com demanda própria de food service.
+
+**Pano de fundo — food service no Brasil:** mercado grande e em crescimento (projeções de dezenas de bilhões de dólares/ano), com **hortifruti em destaque** e a **escolha de fornecedor** cada vez mais estratégica.
 
 > **A validar em campo (seção 12):** número real de estabelecimentos-alvo por cidade e ticket médio semanal por tipo. Recomenda-se um levantamento simples (lista de restaurantes/hotéis/escolas por município) para dimensionar o SOM (mercado que dá pra capturar no ano 1).
 
@@ -185,6 +192,8 @@ O setor perde **até 30%** por transporte/armazenagem inadequados. O modelo **so
 
 > Mesmo no **conservador** o negócio é **lucrativo**, porque o CAPEX é quase zero e boa parte da estrutura é compartilhada com o supermercado.
 
+> **Leitura por fase geográfica:** o cenário **Conservador** representa bem a **largada só em Anchieta** — já positivo. Os cenários **Realista** e **Otimista** só são alcançados na **expansão** para Guarapari, Piúma e Iconha, onde está o grande volume (especialmente o verão de Guarapari).
+
 ### 7.5 Investimento inicial estimado (incremental)
 | Item | Faixa (R$) |
 |---|---|
@@ -220,23 +229,26 @@ _Capital de giro da compra: coberto pelo supermercado (não entra como investime
 
 ## 9. Roadmap (fases)
 
-**Fase 0 — Validação (semanas 1–4)**
-- Levantar lista de clientes-alvo por cidade e visitar os 15–20 mais promissores;
+> O fio condutor é geográfico: **provar em Anchieta → estabilizar → só então expandir.**
+
+**Fase 0 — Validação em Anchieta (semanas 1–4)**
+- Levantar a lista de clientes-alvo **em Anchieta** e visitar os 15–20 mais promissores;
 - Fechar **compromissos de pedido** (mesmo informais) → validar ticket e volume reais;
 - Confirmar enquadramento fiscal e exigências sanitárias.
 
-**Fase 1 — Piloto enxuto (mês 1–3)**
+**Fase 1 — Piloto enxuto em Anchieta (mês 1–3)**
 - Operar com **WhatsApp/planilha** para pedidos;
-- Rodar 2–3 ciclos por semana com um grupo inicial de clientes;
-- Medir margem real, perdas e satisfação.
+- Rodar 2–3 ciclos por semana com um grupo inicial de clientes **de Anchieta**;
+- Medir margem real, perdas e satisfação — e **ajustar o processo até rodar redondo**.
 
-**Fase 2 — Estruturação + Software (mês 3+)**
+**Fase 2 — Estabilizar + Software (mês 3+)**
+- Consolidar a operação de Anchieta (rotas, faturamento, cobrança padronizados);
 - Construir a **plataforma** (portal de pedidos B2B + painel interno de compras/logística/financeiro);
-- Padronizar rotas, faturamento e cobrança;
-- Escalar a base de clientes.
+- Preparar a operação para escalar sem perder qualidade.
 
-**Fase 3 — Expansão**
-- Ampliar mix (itens correlatos), cidades e frota conforme a demanda.
+**Fase 3 — Expansão geográfica**
+- Levar o modelo já comprovado para **Guarapari** (o grande prêmio, pelo verão), **Piúma** e **Iconha**;
+- Ampliar mix (itens correlatos) e frota conforme a demanda de cada nova praça.
 
 ---
 
@@ -263,8 +275,8 @@ Ideias para batizar a distribuidora (a decidir com a família):
 ---
 
 ## 12. Dados a validar (próximos passos concretos)
-- [ ] **Ticket médio semanal** real por tipo de cliente (levantar nas visitas)
-- [ ] **Número de estabelecimentos-alvo** por cidade (montar a lista)
+- [ ] **Ticket médio semanal** real por tipo de cliente (levantar nas visitas em Anchieta)
+- [ ] **Número de estabelecimentos-alvo em Anchieta** (montar a lista da largada)
 - [ ] **Volume e custo** reais da "compra a mais" no CEASA
 - [ ] **Custo de frete incremental** (caminhão maior? viagens extras?)
 - [ ] **Capacidade do caminhão** vs. demanda projetada (folga real)
