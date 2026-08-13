@@ -1,5 +1,5 @@
-# PLANO DE AÇÃO — REVENDA DE GÁS E ÁGUA MINERAL
-## Supermercado Multishow — Anchieta/ES
+# PLANO DE AÇÃO — RÁPIGAS — GÁS E ÁGUA
+## Uma empresa do grupo Multishow — Anchieta/ES
 ### Agosto/2026
 
 ---
@@ -8,13 +8,13 @@
 
 ### POSICIONAMENTO
 
-**Nome sugerido:** "Gás e Água Multishow" (ou "Depósito Multishow Gás e Água")
-
-**Slogan:** "Pediu, chegou. O gás e a água do seu Multishow."
+**Marca:** **RápiGás — Gás e Água**
+**Slogan:** **"Pediu, chegou."**
+**Tagline:** "Uma empresa do grupo Multishow"
 
 **Diferencial competitivo:**
-- Entrega rápida (meta: 30 minutos no raio de 3km)
-- Confiança da marca Multishow (já conhecida na região)
+- Entrega rápida (meta: 30 minutos no raio de 3km) — reforçado pelo slogan "Pediu, chegou."
+- Confiança da marca Multishow (RápiGás como extensão do grupo)
 - Conveniência: pede no supermercado, recebe em casa
 - Bandeira branca = menor preço (negocia com todas as distribuidoras)
 
@@ -206,7 +206,7 @@
 
 | # | Decisão | Opções | Recomendação |
 |---|---|---|---|
-| 1 | Nome da revenda | "Gás e Água Multishow" / outro | Aproveitar a marca Multishow |
+| 1 | Nome da revenda | **RápiGás — Gás e Água** | Definido — identidade visual já desenvolvida |
 | 2 | Veículo de entrega | Usar frota existente / comprar moto | Usar frota se possível (economia de R$ 8.000) |
 | 3 | Funcionário | Novo / realocar do supermercado | Realocar se tiver alguém disponível (já treinado no trato com cliente) |
 | 4 | Horário de funcionamento | Seg-Sáb 7h-18h / Seg-Dom 7h-20h | Seg-Sáb 7h-18h (testar antes de ampliar) |

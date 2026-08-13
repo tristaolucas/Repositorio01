@@ -1,6 +1,7 @@
 # PLANO DE NEGÓCIOS
-## Revenda de Gás de Cozinha (GLP P13) e Água Mineral (Galão 20L)
-### Supermercado Multishow — Anchieta/ES
+## RápiGás — Gás e Água
+### Revenda de Gás de Cozinha (GLP P13) e Água Mineral (Galão 20L)
+### Uma empresa do grupo Multishow — Anchieta/ES
 
 **Versão 1.0 — Agosto/2026**
 **Documento confidencial — uso exclusivo para apresentação a investidores**
@@ -9,7 +10,7 @@
 
 ## SUMÁRIO EXECUTIVO
 
-O presente plano propõe a abertura de uma **revenda independente de gás de cozinha (GLP P13) e água mineral (galão 20L)** vinculada ao Supermercado Multishow, um comércio já consolidado no município de Anchieta, Espírito Santo.
+O presente plano propõe a abertura da **RápiGás — Gás e Água**, uma revenda independente de gás de cozinha (GLP P13) e água mineral (galão 20L) vinculada ao Supermercado Multishow, um comércio já consolidado no município de Anchieta, Espírito Santo. A RápiGás é uma empresa do grupo Multishow.
 
 A operação será instalada em **imóvel próprio** localizado na rua de trás do supermercado (mesmo quarteirão), eliminando o custo de aluguel — a principal despesa fixa de concorrentes. O espaço, atualmente subutilizado como garagem de caminhões, possui área generosa para armazenamento seguro dentro dos limites da Classe II da ANP (até 120 botijões P13).
 
@@ -25,7 +26,7 @@ A operação será instalada em **imóvel próprio** localizado na rua de trás 
 | ROI anual | 200% |
 | EBITDA acumulado (12 meses, com ramp-up) | R$ 58.761 |
 
-O diferencial competitivo é a **sinergia com o Supermercado Multishow**: base de clientes cativa, fluxo diário de consumidores, marca já reconhecida na região, e logística compartilhada. A revenda nasce com demanda garantida e custo de aquisição de cliente próximo de zero.
+O diferencial competitivo é a **sinergia com o Supermercado Multishow**: base de clientes cativa, fluxo diário de consumidores, marca já reconhecida na região, e logística compartilhada. A RápiGás nasce com demanda garantida e custo de aquisição de cliente próximo de zero. Seu slogan — **"Pediu, chegou."** — traduz a proposta de valor: entrega rápida, confiança e simplicidade.
 
 ---
 
@@ -37,7 +38,7 @@ O GLP de cozinha é um produto de **demanda inelástica**: todos os domicílios 
 
 A água mineral em galão 20L segue dinâmica semelhante — reposição regular, consumo constante, margens superiores ao gás.
 
-Anchieta/ES, com aproximadamente **33.000 habitantes e 10.000 domicílios**, apresenta um mercado local com poucos competidores organizados e nenhum player com a vantagem de localização e marca que o Multishow possui.
+Anchieta/ES, com aproximadamente **33.000 habitantes e 10.000 domicílios**, apresenta um mercado local com poucos competidores organizados e nenhum player com a vantagem de localização e marca que a RápiGás, como empresa do grupo Multishow, possui.
 
 ### 1.2 Por Que Agora
 
@@ -78,7 +79,7 @@ Substituiu as transferências de renda diretas por recarga gratuita de botijão 
 **Modelo escolhido — Bandeira Branca (Independente):**
 - Sem exclusividade com distribuidora → negocia preço de compra com todas
 - Sem pagamento de royalties ou taxas de franquia
-- Marca própria → identidade visual vinculada ao Multishow
+- Marca própria → identidade visual RápiGás, vinculada ao Multishow
 - Maior flexibilidade comercial e de precificação
 - Menor investimento inicial (sem adequação a padrões de bandeira)
 
@@ -149,11 +150,11 @@ O mercado de revenda de GLP em Anchieta é caracterizado por:
 | Marca | Desconhecida ou genérica | Multishow — já reconhecida na região |
 | Base de clientes | Construída do zero | Base cativa do supermercado |
 | Custo de aluguel | R$ 800-1.500/mês | R$ 0 (imóvel próprio) |
-| Canais de venda | Telefone/presencial | WhatsApp + presencial + Multishow |
+| Canais de venda | Telefone/presencial | WhatsApp + presencial + Multishow + redes sociais |
 | Horário | Limitado | Alinhado ao supermercado |
 | Produtos combinados | Só gás OU só água | Gás + água + combo |
 
-**Vantagem competitiva central**: Nenhum concorrente em Anchieta combina marca estabelecida, ponto comercial próprio sem custo de aluguel, base de clientes cativa e sinergia com supermercado. Esta combinação cria uma barreira natural contra novos entrantes e uma vantagem de custo estrutural sobre incumbentes.
+**Vantagem competitiva central**: Nenhum concorrente em Anchieta combina marca estabelecida (RápiGás, do grupo Multishow), ponto comercial próprio sem custo de aluguel, base de clientes cativa e sinergia com supermercado. Esta combinação cria uma barreira natural contra novos entrantes e uma vantagem de custo estrutural sobre incumbentes.
 
 ---
 
@@ -164,7 +165,7 @@ O mercado de revenda de GLP em Anchieta é caracterizado por:
 ```
 SUPERMERCADO MULTISHOW (frente — Av. Zumira Rosa Antunes)
          ↕ mesmo quarteirão
-REVENDA GÁS E ÁGUA (fundo — R. Vitória / Av. Oliveira)
+RÁPIGAS — GÁS E ÁGUA (fundo — R. Vitória / Av. Oliveira)
 ```
 
 **Funcionamento:**
@@ -193,9 +194,9 @@ REVENDA GÁS E ÁGUA (fundo — R. Vitória / Av. Oliveira)
 ### 3.3 Proposta de Valor
 
 **Para o consumidor residencial:**
-- "Pediu, chegou" — entrega rápida (meta: 30 min)
+- **"Pediu, chegou."** — entrega rápida (meta: 30 min)
 - Preço competitivo (bandeira branca = sem royalty = margem para preço menor)
-- Confiança da marca Multishow
+- Confiança da marca RápiGás, do grupo Multishow
 - Conveniência: resolve gás e água num só lugar
 
 **Para comércios locais:**
@@ -432,10 +433,11 @@ O negócio possui proteções intrínsecas que reduzem o risco global:
 
 ### 7.1 Posicionamento
 
-**Nome sugerido**: "Gás e Água Multishow"
-**Slogan**: "Pediu, chegou. O gás e a água do seu Multishow."
+**Marca**: **RápiGás — Gás e Água**
+**Slogan**: **"Pediu, chegou."**
+**Tagline**: "Uma empresa do grupo Multishow"
 
-A estratégia é vincular a revenda à marca Multishow, aproveitando o capital de confiança já construído na região. O cliente não está comprando de "mais uma revenda de gás" — está comprando do Multishow, onde ele já faz as compras da semana.
+A identidade visual da RápiGás foi desenvolvida para comunicar rapidez, confiança e proximidade. O emblema vermelho com faixa amarela e chama estilizada remete à agilidade e energia, enquanto a tagline vincula a revenda ao Supermercado Multishow, aproveitando o capital de confiança já construído na região. O cliente não está comprando de "mais uma revenda de gás" — está comprando da RápiGás, do mesmo grupo do Multishow onde ele já faz as compras da semana.
 
 ### 7.2 Primeiras 100 Vendas
 
@@ -477,7 +479,7 @@ A estratégia é vincular a revenda à marca Multishow, aproveitando o capital d
 
 | Decisão | Opções | Recomendação |
 |---|---|---|
-| Nome da revenda | "Gás e Água Multishow" ou outro | Aproveitar a marca Multishow |
+| Nome da revenda | **RápiGás — Gás e Água** | Definido — marca e identidade visual já desenvolvidas |
 | Veículo de entrega | Frota existente ou moto nova | Usar frota existente (economia R$ 8.000) |
 | Funcionário | Novo ou realocado do supermercado | Realocar se disponível |
 | Horário | Seg-Sáb 7h-18h ou Seg-Dom 7h-20h | Seg-Sáb 7h-18h (testar antes) |
@@ -529,12 +531,12 @@ Contém: Premissas editáveis, DRE 12 meses com ramp-up, cenários comparativos,
 Arquivo: `Plano_Acao_Gas_Agua_Multishow.md`
 Contém: Go-to-market, MVP, OKRs de 90 dias, cronograma semana a semana, orçamento de implantação.
 
-### Anexo C — Brief de Identidade Visual
+### Anexo C — Manual de Identidade Visual RápiGás
 Arquivo: `Brief_Identidade_Visual_Gas_Agua_Multishow.md`
-Contém: Todas as informações para agência de marketing desenvolver marca e identidade visual.
+Contém: Identidade visual completa da marca RápiGás — logotipo, paleta de cores, tipografia, aplicações e diretrizes de uso.
 
 ---
 
 *Documento preparado em Agosto/2026*
-*Supermercado Multishow — Anchieta/ES*
-*Contato: ltcarmo@gmail.com*
+*RápiGás — Gás e Água | Uma empresa do grupo Multishow*
+*Anchieta/ES | Contato: ltcarmo@gmail.com*
