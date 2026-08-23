@@ -9,7 +9,8 @@
 - **Cliente:** Empresários de Anchieta/ES. Operam loja de roupa comum; a marca fitness é negócio novo e independente. Nomes citados na reunião: Sabrina (levantou a exigência de tecido) e Thaís.
 - **Fase atual:** 1 (descoberta/validação), com a conversa já vazando para a Fase 3 (produto/fornecedor). 2026-08-23: capital, concorrência e nicho preciso ainda NÃO existem. Não deixar avançar para preço sem fechar custo.
 - **Nicho:** Musculação/academia. Feminino primeiro, masculino depois (não exclusivo). Peças: legging, top, short, macacão.
-- **Capital e apetite de risco:** SEM TETO DECLARADO. 2026-08-23: perguntados, responderam que não sabem e que o capital "vai ser o necessário pra produzir" a grade que definiram. Inverteram a ordem — o lote passa a definir o investimento, e não o contrário. Risco a monitorar.
+- **Capital:** 2026-08-23 — declararam ter caixa para os ~R$ 40 mil **e sobra para marketing**. Acham o valor "relativamente baixo". Teto total ainda não declarado — só sabemos que 40 mil cabe.
+- **ALERTA SOCIETÁRIO:** na mesma fala veio "posso, não é a gente, né, Edgardo?" — sugere que o capital sai de um sócio, não do conjunto. Levantado com Lucas para verificar antes de investir. Não é consultoria jurídica: encaminhar para advogado.
 - **Modelo:** Marca própria com facção terceirizada. Canais: Mercado Livre, Shopee, e-commerce próprio e Instagram. Alcance nacional desde o início.
 
 ## Decisões Tomadas

@@ -37,6 +37,11 @@ Conjunto sai a ~R$ 103 produzido. Os R$ 299 cogitados dão menos de 3x, antes de
 ## O que ainda não existe
 Teto de capital, concorrência mapeada, custo de matéria-prima, custo de costura de macacão e short.
 
+## O RISCO CENTRAL DO PLANO (23/08)
+O lote de 416 peças **não se paga com venda parcial**. Ponto de equilíbrio no ML: **97% do lote**. Na Shopee, 124% — vender tudo não paga. Marca nova vende 40-60% do primeiro lote, o que significa resultado negativo de R$ 13 mil a R$ 20 mil no primeiro ciclo.
+Isso não muda cortando a curva: com 4 modelos o equilíbrio também é ~98%. **A margem por peça é que é fina demais em relação ao lote.**
+O que muda o jogo: lote menor libera caixa para mídia. 8 modelos deixam R$ 6,1 mil para anúncio; 4 modelos deixam **R$ 23,5 mil**. Estoque não gira sozinho.
+
 ## Riscos vivos
 - **Ancoragem no R$ 15.** Tratam custo de costura como custo do produto. É a confusão mais cara da mesa.
 - **Marketplace come margem.** Comissão e frete não entraram na conta deles.
