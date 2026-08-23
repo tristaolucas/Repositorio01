@@ -42,6 +42,7 @@
 
 ## Entregáveis Já Apresentados
 - **2026-08-23** — `_bmad-output/planning-artifacts/custo-lote-inicial.md`: investimento inicial de produção, com cenários, custo por peça e premissas separadas entre pesquisado, confirmado e estimado.
+  Versão apresentável publicada: https://claude.ai/code/artifact/b01e6bd7-293d-4217-87c7-7c9fc51c6212 (privado até Lucas compartilhar). Para atualizar, republicar o mesmo arquivo `_bmad-output/planning-artifacts/custo-lote-inicial.html`.
 
 ## Como Lucas Trabalha
 {Ritmo de reunião, formato que ele prefere, o que o irrita num entregável.}

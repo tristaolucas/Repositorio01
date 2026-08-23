@@ -1,0 +1,389 @@
+<title>Custo do Primeiro Lote</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+  :root {
+    --bg:        #F7F7F9;
+    --surface:   #FFFFFF;
+    --raise:     #FBFBFD;
+    --text:      #14161F;
+    --muted:     #5C6274;
+    --faint:     #868CA0;
+    --border:    #E2E4EC;
+    --rule:      #CBCFDE;
+    --accent:    #2F4380;
+    --accent-bg: #E9EDF8;
+    --ok:        #1F6152;
+    --ok-bg:     #E2F0EC;
+    --warn:      #8C5A0C;
+    --warn-bg:   #FAF0DC;
+    --shadow:    0 1px 2px rgba(20,22,31,.05), 0 8px 24px -16px rgba(20,22,31,.28);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:        #0F1117;
+      --surface:   #171A23;
+      --raise:     #1D212C;
+      --text:      #E8EAF0;
+      --muted:     #969CB0;
+      --faint:     #767C90;
+      --border:    #272B38;
+      --rule:      #343A4A;
+      --accent:    #9DB0EC;
+      --accent-bg: #1C2340;
+      --ok:        #74C6AF;
+      --ok-bg:     #132C26;
+      --warn:      #E0A94E;
+      --warn-bg:   #2D2413;
+      --shadow:    0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:        #0F1117;
+    --surface:   #171A23;
+    --raise:     #1D212C;
+    --text:      #E8EAF0;
+    --muted:     #969CB0;
+    --faint:     #767C90;
+    --border:    #272B38;
+    --rule:      #343A4A;
+    --accent:    #9DB0EC;
+    --accent-bg: #1C2340;
+    --ok:        #74C6AF;
+    --ok-bg:     #132C26;
+    --warn:      #E0A94E;
+    --warn-bg:   #2D2413;
+    --shadow:    0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.65;
+    margin: 0;
+    padding: clamp(1.5rem, 4vw, 4rem) clamp(1rem, 5vw, 2rem) 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .doc { max-width: 54rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3.5rem; }
+
+  /* ---------- cabeçalho ---------- */
+  .head { display: flex; flex-direction: column; gap: 1.25rem; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .72rem; font-weight: 500; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); margin: 0;
+  }
+  h1 {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700; font-size: clamp(2rem, 5.5vw, 3rem); line-height: 1.08;
+    letter-spacing: -.022em; text-wrap: balance; margin: 0;
+  }
+  .standfirst { font-size: 1.1rem; color: var(--muted); margin: 0; max-width: 42rem; }
+
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 0 2.5rem;
+    border-top: 1px solid var(--rule); padding-top: 1rem;
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .78rem;
+  }
+  .meta div { display: flex; flex-direction: column; gap: .15rem; padding: .35rem 0; }
+  .meta dt { color: var(--faint); letter-spacing: .06em; text-transform: uppercase; font-size: .68rem; }
+  .meta dd { margin: 0; color: var(--text); font-weight: 500; }
+
+  /* ---------- seções ---------- */
+  section { display: flex; flex-direction: column; gap: 1.15rem; }
+  h2 {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600; font-size: 1.4rem; letter-spacing: -.012em;
+    margin: 0; padding-bottom: .6rem; border-bottom: 2px solid var(--text);
+    text-wrap: balance;
+  }
+  h3 {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--muted); margin: 0;
+  }
+  p { margin: 0; }
+  p + p { margin-top: .85rem; }
+  strong { font-weight: 600; }
+
+  /* ---------- grade ---------- */
+  .grade {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); border-radius: 3px; overflow: hidden;
+  }
+  .grade div { background: var(--surface); padding: 1.1rem 1rem; }
+  .grade .n {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 1.6rem; font-weight: 600; letter-spacing: -.02em;
+    font-variant-numeric: tabular-nums; display: block; line-height: 1.1;
+  }
+  .grade .k {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--faint); display: block; margin-top: .3rem;
+  }
+  .grade .tot { background: var(--accent-bg); }
+  .grade .tot .n { color: var(--accent); }
+  .mix {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .82rem; color: var(--muted);
+  }
+
+  /* ---------- destaque ---------- */
+  .figure {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: 3px;
+    padding: 1.5rem 1.6rem; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: .5rem;
+  }
+  .figure .big {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: clamp(2.1rem, 7vw, 3.1rem); font-weight: 600;
+    letter-spacing: -.03em; line-height: 1; color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .figure .cap { color: var(--muted); font-size: .97rem; }
+
+  /* ---------- tabelas ---------- */
+  .scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 3px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+  caption {
+    text-align: left; padding: .9rem 1rem .3rem;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--faint);
+  }
+  th, td { padding: .68rem 1rem; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--border); }
+  th:first-child, td:first-child { text-align: left; white-space: normal; min-width: 12rem; }
+  thead th {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .7rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase;
+    color: var(--muted); border-bottom: 1px solid var(--rule);
+  }
+  tbody td { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  tbody th {
+    font-family: "Source Serif 4", Georgia, serif; font-weight: 400;
+    font-size: .95rem; text-align: left;
+  }
+  tbody tr:last-child td, tbody tr:last-child th { border-bottom: none; }
+  td.hero { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
+  td.total { font-weight: 600; }
+
+  /* ---------- premissas por confiança ---------- */
+  .legend { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .chip {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .68rem; font-weight: 500; letter-spacing: .07em; text-transform: uppercase;
+    padding: .3rem .6rem; border-radius: 2px; display: inline-flex; align-items: center; gap: .4rem;
+  }
+  .chip::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: currentColor; }
+  .c-src  { background: var(--ok-bg);     color: var(--ok); }
+  .c-conf { background: var(--accent-bg); color: var(--accent); }
+  .c-est  { background: var(--warn-bg);   color: var(--warn); }
+
+  .band {
+    border-left: 3px solid; border-radius: 3px;
+    background: var(--surface); border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 1.1rem 1.3rem; display: flex; flex-direction: column; gap: .7rem;
+  }
+  .band.src  { border-left-color: var(--ok); }
+  .band.conf { border-left-color: var(--accent); }
+  .band.est  { border-left-color: var(--warn); }
+  .band ul { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: .4rem; }
+  .band li { font-size: .95rem; }
+  .band .tag {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  }
+  .band.src  .tag { color: var(--ok); }
+  .band.conf .tag { color: var(--accent); }
+  .band.est  .tag { color: var(--warn); }
+  code {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .84em;
+    background: var(--raise); border: 1px solid var(--border);
+    padding: .1rem .35rem; border-radius: 2px;
+  }
+
+  /* ---------- ressalvas ---------- */
+  .notes { display: flex; flex-direction: column; gap: 1.5rem; }
+  .note { display: flex; flex-direction: column; gap: .4rem; }
+  .note h4 {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.02rem; font-weight: 600; margin: 0; letter-spacing: -.008em;
+  }
+  .note p { color: var(--muted); font-size: .98rem; }
+
+  /* ---------- decisões ---------- */
+  ol.decisions { margin: 0; padding: 0; list-style: none; counter-reset: d; display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 3px; overflow: hidden; }
+  ol.decisions li {
+    counter-increment: d; background: var(--surface);
+    padding: 1.1rem 1.3rem 1.1rem 3.4rem; position: relative;
+  }
+  ol.decisions li::before {
+    content: counter(d); position: absolute; left: 1.3rem; top: 1.15rem;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .8rem; font-weight: 600; color: var(--accent);
+  }
+  ol.decisions strong { display: block; margin-bottom: .15rem; }
+  ol.decisions span { color: var(--muted); font-size: .95rem; }
+
+  footer {
+    border-top: 1px solid var(--rule); padding-top: 1.2rem;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .74rem; color: var(--faint); line-height: 1.7;
+  }
+
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="doc">
+
+  <header class="head">
+    <p class="eyebrow">Consultoria · Marca fitness</p>
+    <h1>Custo do primeiro lote</h1>
+    <p class="standfirst">Quanto é preciso para produzir a coleção de lançamento inteira — só a fabricação das peças, antes de qualquer custo de venda.</p>
+    <dl class="meta">
+      <div><dt>Data</dt><dd>23 ago 2026</dd></div>
+      <div><dt>Fase</dt><dd>1 → 3</dd></div>
+      <div><dt>Escopo</dt><dd>Só produção</dd></div>
+      <div><dt>Fora do escopo</dt><dd>Venda, canal, marketing</dd></div>
+    </dl>
+  </header>
+
+  <section>
+    <h2>A grade decidida</h2>
+    <div class="grade">
+      <div><span class="n">8</span><span class="k">Modelos</span></div>
+      <div><span class="n">4</span><span class="k">Cores</span></div>
+      <div><span class="n">4</span><span class="k">Tamanhos</span></div>
+      <div class="tot"><span class="n">128</span><span class="k">SKUs</span></div>
+    </div>
+    <p class="mix">3 conjuntos (legging + top) · 2 macacões · 2 shorts · 1 calça flare — tamanhos P, M, G, GG</p>
+  </section>
+
+  <section>
+    <h2>O número</h2>
+
+    <div class="figure">
+      <span class="big">R$ 31.248</span>
+      <span class="cap">Cenário de trabalho: malha intermediária, 3 peças por SKU, 384 peças no lote.</span>
+    </div>
+
+    <p>Abaixo de 3 peças por SKU o tamanho M desaparece da vitrine na primeira semana de venda. Acima de 5, o capital fica parado sem que ninguém ainda saiba quais modelos giram.</p>
+
+    <div class="scroll">
+      <table>
+        <caption>Investimento total por faixa de malha e profundidade de lote</caption>
+        <thead>
+          <tr><th scope="col">Malha</th><th scope="col">2 peças/SKU</th><th scope="col">3 peças/SKU</th><th scope="col">5 peças/SKU</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Econômica · R$ 58,90/kg</th><td>R$ 18.263</td><td>R$ 27.395</td><td>R$ 45.659</td></tr>
+          <tr><th scope="row">Intermediária · R$ 69,90/kg</th><td>R$ 20.832</td><td class="hero">R$ 31.248</td><td>R$ 52.079</td></tr>
+          <tr><th scope="row">Premium · R$ 89,90/kg</th><td>R$ 25.501</td><td>R$ 38.252</td><td>R$ 63.753</td></tr>
+          <tr><th scope="row">Peças no lote</th><td>256</td><td>384</td><td>640</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Custo por peça</h2>
+    <div class="scroll">
+      <table>
+        <caption>Malha intermediária, R$ 69,90/kg</caption>
+        <thead>
+          <tr><th scope="col">Peça</th><th scope="col">Tecido</th><th scope="col">Costura</th><th scope="col">Aviamentos</th><th scope="col">Total</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Conjunto (legging + top)</th><td>R$ 82,76</td><td>R$ 15,00</td><td>R$ 5,00</td><td class="total">R$ 102,76</td></tr>
+          <tr><th scope="row">Macacão</th><td>R$ 69,34</td><td>R$ 15,00</td><td>R$ 5,00</td><td class="total">R$ 89,34</td></tr>
+          <tr><th scope="row">Calça flare</th><td>R$ 69,34</td><td>R$ 10,00</td><td>R$ 5,00</td><td class="total">R$ 84,34</td></tr>
+          <tr><th scope="row">Short</th><td>R$ 26,84</td><td>R$ 8,00</td><td>R$ 5,00</td><td class="total">R$ 39,84</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>O tecido é de 70% a 80% do custo da peça.</strong> O valor de R$ 15,00 da facção — o único número que existia antes desta pesquisa — é a menor parte da conta.</p>
+  </section>
+
+  <section>
+    <h2>De onde vem cada número</h2>
+    <p>Nem toda linha do cálculo tem o mesmo peso. Estas três faixas separam o que foi verificado do que ainda é suposição, para que ninguém trate um chute como dado.</p>
+
+    <div class="legend">
+      <span class="chip c-src">Pesquisado</span>
+      <span class="chip c-conf">Confirmado pelo cliente</span>
+      <span class="chip c-est">Estimado — precisa cotar</span>
+    </div>
+
+    <div class="band src">
+      <span class="tag">Pesquisado, com fonte</span>
+      <ul>
+        <li>Malha suplex poliamida/elastano <strong>88% / 12%</strong>, gramatura <strong>340 g/m²</strong>, largura <strong>1,60 m</strong>.</li>
+        <li>Rendimento de <strong>1,75 metro por quilo</strong>, confirmado na ficha técnica do fornecedor.</li>
+        <li>Preço por quilo: R$ 58,90 · R$ 69,90 · R$ 89,90, conforme a linha da malha.</li>
+        <li>Consumo por peça: legging 0,95 m mais 0,20 m de cós · top 0,60–0,80 m · short curto 0,50–0,70 m · macacão curto 1,40–1,70 m.</li>
+      </ul>
+    </div>
+
+    <div class="band conf">
+      <span class="tag">Confirmado pelo cliente</span>
+      <ul>
+        <li>Costura do conjunto legging + top: <strong>R$ 15,00</strong>, facção de Vila Velha.</li>
+      </ul>
+    </div>
+
+    <div class="band est">
+      <span class="tag">Estimado — precisa virar cotação</span>
+      <ul>
+        <li>Costura de <strong>macacão</strong> (R$ 15,00), <strong>short</strong> (R$ 8,00) e <strong>calça flare</strong> (R$ 10,00). Nenhuma das três foi cotada — são aproximações a partir do valor do conjunto.</li>
+        <li>Aviamentos a R$ 5,00 por peça: elástico, linha, etiqueta, tag e embalagem.</li>
+        <li>Perda de encaixe no corte: 12%. A faixa usual do setor é de 10% a 15%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ressalvas</h2>
+    <div class="notes">
+      <div class="note">
+        <h4>O consumo de tecido está calculado por cima</h4>
+        <p>Cada peça foi calculada isoladamente. Uma facção que faz encaixe profissional, cortando vários tamanhos no mesmo enfesto, aproveita melhor a largura do rolo e pode reduzir esse consumo em 10% a 15%. Vale pedir o consumo real dela antes de fechar o pedido de malha.</p>
+      </div>
+      <div class="note">
+        <h4>A calça flare puxa mais tecido que a legging</h4>
+        <p>A boca da calça aumenta a área do molde. Usei o mesmo consumo do macacão como aproximação, mas a modelagem real pode subir esse número.</p>
+      </div>
+      <div class="note">
+        <h4>O preço de venda ainda não foi calculado — mas um alerta cabe</h4>
+        <p>O conjunto sai por cerca de R$ 103 produzido. Os R$ 299 cogitados dão pouco menos de três vezes o custo, e comissão de marketplace e frete ainda não entraram nessa conta. Quando a conversa de preço voltar, é por aqui que ela precisa começar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>O que decidir agora</h2>
+    <ol class="decisions">
+      <li><strong>Profundidade do lote</strong><span>Duas, três ou cinco peças por SKU. É a alavanca que mais move o número — separa R$ 18 mil de R$ 64 mil.</span></li>
+      <li><strong>Faixa da malha</strong><span>Entre a econômica e a premium há R$ 11 mil de diferença no cenário de três peças por SKU. É também a decisão que define como a peça veste.</span></li>
+      <li><strong>Os 128 SKUs continuam de pé?</strong><span>Cortar de oito para quatro modelos derruba o investimento praticamente pela metade e libera capital para anúncio, que hoje não tem verba reservada.</span></li>
+    </ol>
+  </section>
+
+  <footer>
+    Preparado por Lucas · Consultoria de marca própria — moda fitness<br>
+    Valores em reais, agosto de 2026. Cenários e premissas, não previsão de resultado.<br>
+    Estrutura tributária e jurídica fora do escopo: consultar contador.
+  </footer>
+
+</div>
