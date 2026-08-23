@@ -7,6 +7,8 @@
 # description = "Prefers short, bulleted PRDs over narrative drafts."
 
 [core]
+# Como os agentes devem chamar você.
+user_name = "Lucas"
 # Idioma que os agentes usam ao conversar no chat.
 communication_language = "Português (Brasil)"
 # Idioma dos documentos gerados (PRD, arquitetura, épicos, histórias).
