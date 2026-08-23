@@ -20,7 +20,8 @@ A alavanca real de redução é número de modelos e cores, não a curva.
 - Piso praticável em marketplace: **R$ 199,90**. A R$ 149,90 a Shopee deixa R$ 6,15.
 - Comissões: ML Moda 14% clássico / 19% premium; Shopee 14% + R$ 20-26 fixo; frete grátis obrigatório desde 03/2026.
 - **Os R$ 299 deles estavam certos** — 43-50% de margem. Reconhecer isso na mesa.
-- **Posicionamento pronto: legging que não é transparente.** É a reclamação dominante do segmento no Reclame Aqui, repetida entre marcas. Valida por evidência a exigência de tecido da Sabrina.
+- **CORRIGIDO em 23/08:** "legging que não é transparente" NÃO é posicionamento vago — é alegação praticada de R$ 26,99 a R$ 180+ (Citrine, DNA Sport, Manalinda, Amoras). O espaço real é **provar** a opacidade antes da compra. Nenhuma marca pesquisada publica gramatura em g/m², composição ou teste de opacidade no anúncio. Esse é o vetor de diferenciação, e é barato: o dado já está na ficha do fornecedor.
+- **Régua de preço:** entrada R$ 27-80 · especialistas R$ 150-260 · fashion premium R$ 320+ (Vestem legging avulsa R$ 319-379; Alto Giro a partir de R$ 349,90). Conjunto a R$ 249-299 compete bem contra legging avulsa premium.
 - E-commerce próprio rende 12-19 pontos percentuais a mais que marketplace no mesmo preço.
 
 ## O número do lote inicial (só produção)
