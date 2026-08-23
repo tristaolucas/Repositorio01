@@ -11,6 +11,18 @@ Empresários de Anchieta/ES criando marca própria de roupa fitness para muscula
 ## A grade (fechada em 2026-08-23)
 8 modelos x 4 cores x 4 tamanhos = **128 SKUs**. 3 conjuntos, 2 macacões, 2 shorts, 1 calça flare.
 
+## Curva de tamanho (2026-08-23)
+P=4 · M=4 · G=3 · GG=2 = **13 peças por cor/modelo** → 416 peças, **R$ 33.851**.
+Cuidado: acham que curva por tamanho reduz lote. Aqui ela **aumentou** 8,3% (12 → 13 por combinação).
+A alavanca real de redução é número de modelos e cores, não a curva.
+
+## Achados da pesquisa que mudam o plano
+- Piso praticável em marketplace: **R$ 199,90**. A R$ 149,90 a Shopee deixa R$ 6,15.
+- Comissões: ML Moda 14% clássico / 19% premium; Shopee 14% + R$ 20-26 fixo; frete grátis obrigatório desde 03/2026.
+- **Os R$ 299 deles estavam certos** — 43-50% de margem. Reconhecer isso na mesa.
+- **Posicionamento pronto: legging que não é transparente.** É a reclamação dominante do segmento no Reclame Aqui, repetida entre marcas. Valida por evidência a exigência de tecido da Sabrina.
+- E-commerce próprio rende 12-19 pontos percentuais a mais que marketplace no mesmo preço.
+
 ## O número do lote inicial (só produção)
 Cenário de trabalho: **R$ 31.248** — malha intermediária (R$ 69,90/kg), 3 peças por SKU, 384 peças.
 Faixa completa: R$ 18,3 mil (econômica, 2/SKU) a R$ 63,8 mil (premium, 5/SKU).

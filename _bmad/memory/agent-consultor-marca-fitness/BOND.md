@@ -26,6 +26,8 @@
 - **2026-08-23** — Capital definido como derivado do lote, não como restrição. Pediram o cálculo do investimento necessário.
 - **2026-08-23** — 8º modelo acrescentado: calça flare. Mix agora = 3 conjuntos, 2 macacões, 2 shorts, 1 flare. Grade sobe para **128 SKUs**. Confirmaram que a cápsula está fechada.
 - **2026-08-23** — Pediram o cálculo ignorando custos de venda e etapas posteriores. Entregue: R$ 18,3 mil a R$ 63,8 mil conforme malha e profundidade; cenário de trabalho **R$ 31.248** (malha intermediária, 3 peças/SKU).
+- **2026-08-23** — Curva de tamanho definida: **P=4, M=4, G=3, GG=2** por cor/modelo. Acreditavam estar reduzindo o lote; na prática subiu de 12 para 13 peças por combinação, +8,3% (416 peças, R$ 33.851). Apontado na hora.
+- **2026-08-23** — Pesquisa de mercado concluída. Piso praticável em marketplace: R$ 199,90. Posicionamento identificado: legging que não é transparente — a dor dominante do segmento no Reclame Aqui.
 
 ## Pendências Abertas
 - `[DEFINIR COM CLIENTE]` **Teto de capital.** Não responderam. Reformular: em vez de "quanto vocês têm", perguntar "qual número, se eu disser, faz vocês desistirem?".
