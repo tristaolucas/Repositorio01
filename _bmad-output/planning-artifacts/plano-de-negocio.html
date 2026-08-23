@@ -4,114 +4,103 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 
 <style>
-  :root {
-    --bg:#F7F7F9; --surface:#FFFFFF; --raise:#FBFBFD; --text:#14161F;
-    --muted:#5C6274; --faint:#868CA0; --border:#E2E4EC; --rule:#CBCFDE;
-    --accent:#2F4380; --accent-bg:#E9EDF8;
-    --ok:#1F6152; --ok-bg:#E2F0EC; --warn:#8C5A0C; --warn-bg:#FAF0DC;
-    --bad:#8E2F35; --bad-bg:#FAE7E8;
-    --shadow:0 1px 2px rgba(20,22,31,.05), 0 8px 24px -16px rgba(20,22,31,.28);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg:#0F1117; --surface:#171A23; --raise:#1D212C; --text:#E8EAF0;
-      --muted:#969CB0; --faint:#767C90; --border:#272B38; --rule:#343A4A;
-      --accent:#9DB0EC; --accent-bg:#1C2340;
-      --ok:#74C6AF; --ok-bg:#132C26; --warn:#E0A94E; --warn-bg:#2D2413;
-      --bad:#E88A90; --bad-bg:#2E1618;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg:#0F1117; --surface:#171A23; --raise:#1D212C; --text:#E8EAF0;
-    --muted:#969CB0; --faint:#767C90; --border:#272B38; --rule:#343A4A;
-    --accent:#9DB0EC; --accent-bg:#1C2340;
-    --ok:#74C6AF; --ok-bg:#132C26; --warn:#E0A94E; --warn-bg:#2D2413;
-    --bad:#E88A90; --bad-bg:#2E1618;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
-  }
-  * { box-sizing:border-box; }
-  body {
-    background:var(--bg); color:var(--text);
-    font-family:"Source Serif 4",Georgia,serif; font-size:17px; line-height:1.65;
-    margin:0; padding:clamp(1.5rem,4vw,4rem) clamp(1rem,5vw,2rem) 6rem;
-    -webkit-font-smoothing:antialiased;
-  }
-  .doc { max-width:56rem; margin:0 auto; display:flex; flex-direction:column; gap:3.5rem; }
-  .head { display:flex; flex-direction:column; gap:1.25rem; }
-  .eyebrow { font-family:"IBM Plex Mono",monospace; font-size:.72rem; font-weight:500;
-    letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0; }
-  h1 { font-family:Archivo,sans-serif; font-weight:700; font-size:clamp(2rem,5.5vw,3rem);
-    line-height:1.08; letter-spacing:-.022em; text-wrap:balance; margin:0; }
-  .standfirst { font-size:1.1rem; color:var(--muted); margin:0; max-width:44rem; }
-  .meta { display:flex; flex-wrap:wrap; gap:0 2.5rem; border-top:1px solid var(--rule);
-    padding-top:1rem; font-family:"IBM Plex Mono",monospace; font-size:.78rem; }
-  .meta div { display:flex; flex-direction:column; gap:.15rem; padding:.35rem 0; }
-  .meta dt { color:var(--faint); letter-spacing:.06em; text-transform:uppercase; font-size:.68rem; }
-  .meta dd { margin:0; font-weight:500; }
-  section { display:flex; flex-direction:column; gap:1.15rem; }
-  h2 { font-family:Archivo,sans-serif; font-weight:600; font-size:1.4rem; letter-spacing:-.012em;
-    margin:0; padding-bottom:.6rem; border-bottom:2px solid var(--text); text-wrap:balance; }
-  h3 { font-family:Archivo,sans-serif; font-size:1.05rem; font-weight:600; margin:0; }
-  p { margin:0; } p + p { margin-top:.85rem; }
-  .lead { font-size:1.05rem; }
-  strong { font-weight:600; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));
-    gap:1px; background:var(--border); border:1px solid var(--border); border-radius:3px; overflow:hidden; }
-  .cards div { background:var(--surface); padding:1.1rem 1rem; }
-  .cards .n { font-family:"IBM Plex Mono",monospace; font-size:1.5rem; font-weight:600;
-    letter-spacing:-.02em; font-variant-numeric:tabular-nums; display:block; line-height:1.1; }
-  .cards .k { font-family:"IBM Plex Mono",monospace; font-size:.66rem; letter-spacing:.08em;
-    text-transform:uppercase; color:var(--faint); display:block; margin-top:.3rem; }
-  .cards .hi { background:var(--accent-bg); } .cards .hi .n { color:var(--accent); }
-  .scroll { overflow-x:auto; border:1px solid var(--border); border-radius:3px; background:var(--surface); }
-  table { border-collapse:collapse; width:100%; font-size:.9rem; }
-  caption { text-align:left; padding:.9rem 1rem .3rem; font-family:"IBM Plex Mono",monospace;
-    font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); }
-  th,td { padding:.65rem .9rem; text-align:right; white-space:nowrap; border-bottom:1px solid var(--border); }
-  th:first-child,td:first-child { text-align:left; white-space:normal; min-width:10rem; }
-  thead th { font-family:"IBM Plex Mono",monospace; font-size:.68rem; font-weight:600;
-    letter-spacing:.07em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--rule); }
-  tbody td { font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; }
-  tbody th { font-family:"Source Serif 4",serif; font-weight:400; font-size:.93rem; text-align:left; }
-  tbody tr:last-child td, tbody tr:last-child th { border-bottom:none; }
-  td.pos { color:var(--ok); font-weight:600; } td.neg { color:var(--bad); font-weight:600; }
-  td.hero { background:var(--accent-bg); color:var(--accent); font-weight:600; }
-  .band { border-left:3px solid; border-radius:3px; background:var(--surface);
-    border-top:1px solid var(--border); border-right:1px solid var(--border);
-    border-bottom:1px solid var(--border); padding:1.1rem 1.3rem;
-    display:flex; flex-direction:column; gap:.6rem; }
-  .band.k { border-left-color:var(--accent); } .band.w { border-left-color:var(--warn); }
-  .band.g { border-left-color:var(--ok); }
-  .band .tag { font-family:"IBM Plex Mono",monospace; font-size:.7rem; font-weight:600;
-    letter-spacing:.08em; text-transform:uppercase; }
-  .band.k .tag { color:var(--accent); } .band.w .tag { color:var(--warn); } .band.g .tag { color:var(--ok); }
-  .risks { display:flex; flex-direction:column; gap:1px; background:var(--border);
-    border:1px solid var(--border); border-radius:3px; overflow:hidden; }
-  .risk { background:var(--surface); padding:1rem 1.2rem; display:grid;
-    grid-template-columns:auto 1fr; gap:.4rem .9rem; align-items:start; }
-  .sev { font-family:"IBM Plex Mono",monospace; font-size:.62rem; font-weight:600;
-    letter-spacing:.08em; text-transform:uppercase; padding:.25rem .5rem; border-radius:2px;
-    white-space:nowrap; grid-row:span 2; }
-  .s-alta { background:var(--bad-bg); color:var(--bad); }
-  .s-media { background:var(--warn-bg); color:var(--warn); }
-  .s-baixa { background:var(--ok-bg); color:var(--ok); }
-  .risk .t { font-weight:600; }
-  .risk .d { color:var(--muted); font-size:.94rem; grid-column:2; }
-  ol.steps { margin:0; padding:0; list-style:none; counter-reset:s;
-    display:flex; flex-direction:column; gap:1px; background:var(--border);
-    border:1px solid var(--border); border-radius:3px; overflow:hidden; }
-  ol.steps li { counter-increment:s; background:var(--surface); padding:1rem 1.2rem 1rem 3.3rem; position:relative; }
-  ol.steps li::before { content:counter(s); position:absolute; left:1.2rem; top:1.05rem;
-    font-family:"IBM Plex Mono",monospace; font-size:.78rem; font-weight:600; color:var(--accent); }
-  ol.steps strong { display:block; margin-bottom:.1rem; }
-  ol.steps span { color:var(--muted); font-size:.94rem; }
-  ul.plain { margin:0; padding-left:1.15rem; display:flex; flex-direction:column; gap:.45rem; }
-  ul.plain li { font-size:.97rem; }
-  footer { border-top:1px solid var(--rule); padding-top:1.2rem;
-    font-family:"IBM Plex Mono",monospace; font-size:.73rem; color:var(--faint); line-height:1.7; }
-  a { color:var(--accent); }
-  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  :root{--bg:#F7F7F9;--surface:#FFFFFF;--raise:#FBFBFD;--text:#14161F;--muted:#5C6274;
+    --faint:#868CA0;--border:#E2E4EC;--rule:#CBCFDE;--accent:#2F4380;--accent-bg:#E9EDF8;
+    --ok:#1F6152;--ok-bg:#E2F0EC;--warn:#8C5A0C;--warn-bg:#FAF0DC;--bad:#8E2F35;--bad-bg:#FAE7E8;
+    --shadow:0 1px 2px rgba(20,22,31,.05),0 8px 24px -16px rgba(20,22,31,.28);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#0F1117;--surface:#171A23;--raise:#1D212C;--text:#E8EAF0;--muted:#969CB0;
+    --faint:#767C90;--border:#272B38;--rule:#343A4A;--accent:#9DB0EC;--accent-bg:#1C2340;
+    --ok:#74C6AF;--ok-bg:#132C26;--warn:#E0A94E;--warn-bg:#2D2413;--bad:#E88A90;--bad-bg:#2E1618;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.7);}}
+  :root[data-theme="dark"]{--bg:#0F1117;--surface:#171A23;--raise:#1D212C;--text:#E8EAF0;
+    --muted:#969CB0;--faint:#767C90;--border:#272B38;--rule:#343A4A;--accent:#9DB0EC;
+    --accent-bg:#1C2340;--ok:#74C6AF;--ok-bg:#132C26;--warn:#E0A94E;--warn-bg:#2D2413;
+    --bad:#E88A90;--bad-bg:#2E1618;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.7);}
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:"Source Serif 4",Georgia,serif;
+    font-size:17px;line-height:1.65;margin:0;
+    padding:clamp(1.5rem,4vw,4rem) clamp(1rem,5vw,2rem) 6rem;-webkit-font-smoothing:antialiased}
+  .doc{max-width:56rem;margin:0 auto;display:flex;flex-direction:column;gap:3.5rem}
+  .head{display:flex;flex-direction:column;gap:1.25rem}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.72rem;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0}
+  h1{font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(2rem,5.5vw,3rem);
+    line-height:1.08;letter-spacing:-.022em;text-wrap:balance;margin:0}
+  .standfirst{font-size:1.1rem;color:var(--muted);margin:0;max-width:44rem}
+  .meta{display:flex;flex-wrap:wrap;gap:0 2.5rem;border-top:1px solid var(--rule);
+    padding-top:1rem;font-family:"IBM Plex Mono",monospace;font-size:.78rem}
+  .meta div{display:flex;flex-direction:column;gap:.15rem;padding:.35rem 0}
+  .meta dt{color:var(--faint);letter-spacing:.06em;text-transform:uppercase;font-size:.68rem}
+  .meta dd{margin:0;font-weight:500}
+  section{display:flex;flex-direction:column;gap:1.15rem}
+  h2{font-family:Archivo,sans-serif;font-weight:600;font-size:1.4rem;letter-spacing:-.012em;
+    margin:0;padding-bottom:.6rem;border-bottom:2px solid var(--text);text-wrap:balance}
+  h3{font-family:Archivo,sans-serif;font-size:1.05rem;font-weight:600;margin:0}
+  p{margin:0}p+p{margin-top:.85rem}.lead{font-size:1.05rem}strong{font-weight:600}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1px;
+    background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden}
+  .cards div{background:var(--surface);padding:1.1rem 1rem}
+  .cards .n{font-family:"IBM Plex Mono",monospace;font-size:1.45rem;font-weight:600;
+    letter-spacing:-.02em;font-variant-numeric:tabular-nums;display:block;line-height:1.1}
+  .cards .k{font-family:"IBM Plex Mono",monospace;font-size:.65rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--faint);display:block;margin-top:.3rem}
+  .cards .hi{background:var(--accent-bg)}.cards .hi .n{color:var(--accent)}
+  .scroll{overflow-x:auto;border:1px solid var(--border);border-radius:3px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;font-size:.9rem}
+  caption{text-align:left;padding:.9rem 1rem .3rem;font-family:"IBM Plex Mono",monospace;
+    font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+  th,td{padding:.65rem .9rem;text-align:right;white-space:nowrap;border-bottom:1px solid var(--border)}
+  th:first-child,td:first-child{text-align:left;white-space:normal;min-width:10rem}
+  thead th{font-family:"IBM Plex Mono",monospace;font-size:.68rem;font-weight:600;
+    letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule)}
+  tbody td{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+  tbody th{font-family:"Source Serif 4",serif;font-weight:400;font-size:.93rem;text-align:left}
+  tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}
+  td.pos{color:var(--ok);font-weight:600}td.neg{color:var(--bad);font-weight:600}
+  td.hero{background:var(--accent-bg);color:var(--accent);font-weight:600}
+  tr.rec th,tr.rec td{background:var(--accent-bg)}
+  .band{border-left:3px solid;border-radius:3px;background:var(--surface);
+    border-top:1px solid var(--border);border-right:1px solid var(--border);
+    border-bottom:1px solid var(--border);padding:1.1rem 1.3rem;display:flex;flex-direction:column;gap:.6rem}
+  .band.k{border-left-color:var(--accent)}.band.w{border-left-color:var(--warn)}
+  .band.g{border-left-color:var(--ok)}.band.b{border-left-color:var(--bad)}
+  .band .tag{font-family:"IBM Plex Mono",monospace;font-size:.7rem;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase}
+  .band.k .tag{color:var(--accent)}.band.w .tag{color:var(--warn)}
+  .band.g .tag{color:var(--ok)}.band.b .tag{color:var(--bad)}
+  .phase{display:flex;flex-direction:column;gap:.9rem;background:var(--surface);
+    border:1px solid var(--border);border-radius:3px;padding:1.3rem 1.4rem}
+  .phase-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:.7rem;
+    border-bottom:1px solid var(--border);padding-bottom:.7rem}
+  .phase-n{font-family:"IBM Plex Mono",monospace;font-size:.7rem;font-weight:600;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  .phase-t{font-family:Archivo,sans-serif;font-size:1.12rem;font-weight:600;flex:1}
+  .phase-w{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--faint);
+    background:var(--raise);border:1px solid var(--border);padding:.2rem .5rem;border-radius:2px}
+  .acts{display:flex;flex-direction:column;gap:.75rem;margin:0;padding:0;list-style:none}
+  .acts li{display:grid;grid-template-columns:1.3rem 1fr;gap:.6rem;align-items:start;font-size:.97rem}
+  .acts li::before{content:"";width:.55rem;height:.55rem;margin-top:.45rem;border-radius:1px;
+    background:var(--accent)}
+  .acts b{font-weight:600}
+  .gate{background:var(--warn-bg);border-radius:2px;padding:.7rem .9rem;font-size:.93rem}
+  .gate b{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--warn);display:block;margin-bottom:.2rem}
+  .risks{display:flex;flex-direction:column;gap:1px;background:var(--border);
+    border:1px solid var(--border);border-radius:3px;overflow:hidden}
+  .risk{background:var(--surface);padding:1rem 1.2rem;display:grid;
+    grid-template-columns:auto 1fr;gap:.4rem .9rem;align-items:start}
+  .sev{font-family:"IBM Plex Mono",monospace;font-size:.62rem;font-weight:600;letter-spacing:.08em;
+    text-transform:uppercase;padding:.25rem .5rem;border-radius:2px;white-space:nowrap;grid-row:span 2}
+  .s-a{background:var(--bad-bg);color:var(--bad)}.s-m{background:var(--warn-bg);color:var(--warn)}
+  .s-b{background:var(--ok-bg);color:var(--ok)}
+  .risk .t{font-weight:600}.risk .d{color:var(--muted);font-size:.94rem;grid-column:2}
+  ul.plain{margin:0;padding-left:1.15rem;display:flex;flex-direction:column;gap:.45rem}
+  ul.plain li{font-size:.97rem}
+  footer{border-top:1px solid var(--rule);padding-top:1.2rem;font-family:"IBM Plex Mono",monospace;
+    font-size:.73rem;color:var(--faint);line-height:1.7}
+  a{color:var(--accent)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
@@ -119,149 +108,212 @@
 
 <header class="head">
   <p class="eyebrow">Consultoria · Marca fitness</p>
-  <h1>Plano de negócio</h1>
-  <p class="standfirst">Marca própria de roupa fitness feminina, venda nacional online. Da estrutura de custo ao ponto em que o dinheiro volta — com o que pode dar errado no caminho.</p>
+  <h1>Plano de negócio e ação</h1>
+  <p class="standfirst">Marca própria de roupa fitness feminina, venda nacional online. O que fazer, em que ordem, com quanto — e o que precisa dar certo em cada etapa para a seguinte acontecer.</p>
   <dl class="meta">
     <div><dt>Data</dt><dd>23 ago 2026</dd></div>
     <div><dt>Capital</dt><dd>R$ 60.000</dd></div>
-    <div><dt>Mercadoria</dt><dd>R$ 40.000</dd></div>
-    <div><dt>Mídia</dt><dd>R$ 20.000</dd></div>
+    <div><dt>Horizonte</dt><dd>90 dias</dd></div>
+    <div><dt>Fase</dt><dd>Lançamento</dd></div>
   </dl>
 </header>
 
 <section>
-  <h2>Resumo executivo</h2>
-  <p class="lead">A operação fecha em pé, mas com folga menor do que o valor do investimento sugere. O lote inteiro gera <strong>R$ 34.722</strong> de margem bruta. A verba de mídia consome <strong>58% disso</strong>. O que sobra ao fim de dois ciclos é <strong>R$ 14.722</strong> — cerca de 25% sobre os R$ 60 mil comprometidos.</p>
-  <p>Não é um negócio ruim. É um negócio de margem apertada no primeiro lote, que melhora muito no segundo, quando a produção já está paga e a marca tem prova social. O erro a evitar é ler os R$ 60 mil como confortáveis e dimensionar por cima.</p>
+  <h2>A decisão central</h2>
+  <p class="lead">Produzir <strong>192 peças</strong>, não 416. Manter os oito modelos, mas com curva rasa — 2 P · 2 M · 1 G · 1 GG por cor. Guardar <strong>R$ 37,4 mil</strong> para repor o que provar que vende.</p>
+  <p>O motivo é simples: hoje ninguém sabe quais modelos e tamanhos giram. A curva 4/4/3/2 é palpite, e palpite de R$ 33,8 mil custa três vezes mais caro que palpite de R$ 15,6 mil. Com o Instagram de 50 mil seguidores, dá para descobrir isso antes de emitir o pedido — e reforçar depois, com dado.</p>
   <div class="cards">
-    <div><span class="n">416</span><span class="k">Peças</span></div>
-    <div><span class="n">8</span><span class="k">Modelos</span></div>
-    <div><span class="n">R$ 34,7k</span><span class="k">Margem do lote</span></div>
-    <div class="hi"><span class="n">R$ 14,7k</span><span class="k">Lucro em 2 ciclos</span></div>
+    <div><span class="n">192</span><span class="k">Peças no piloto</span></div>
+    <div><span class="n">R$ 15,6k</span><span class="k">Produção</span></div>
+    <div><span class="n">R$ 7k</span><span class="k">Mídia</span></div>
+    <div class="hi"><span class="n">R$ 37,4k</span><span class="k">Reserva de reposição</span></div>
   </div>
-</section>
-
-<section>
-  <h2>1 · O produto</h2>
-  <p>Oito modelos — 3 conjuntos legging + top, 2 macacões, 2 shorts e 1 calça flare — em 4 cores e 4 tamanhos, com curva <strong>P=4 · M=4 · G=3 · GG=2</strong> por cor e modelo. Total de 416 peças.</p>
   <div class="scroll">
     <table>
-      <caption>Custo por peça · malha intermediária R$ 69,90/kg</caption>
-      <thead><tr><th>Peça</th><th>Tecido</th><th>Costura</th><th>Aviamentos</th><th>Custo</th><th>Preço</th><th>Margem ML</th></tr></thead>
+      <caption>Por que a curva rasa</caption>
+      <thead><tr><th>Curva por cor/modelo</th><th>Peças</th><th>Produção</th><th>Receita cheia</th><th>Sobra p/ reposição</th></tr></thead>
       <tbody>
-        <tr><th>Conjunto legging+top</th><td>R$ 82,76</td><td>R$ 15,00</td><td>R$ 5,00</td><td>R$ 102,76</td><td>R$ 249,90</td><td class="pos">R$ 106,15</td></tr>
-        <tr><th>Macacão</th><td>R$ 69,34</td><td>R$ 15,00</td><td>R$ 5,00</td><td>R$ 89,34</td><td>R$ 219,90</td><td class="pos">R$ 93,77</td></tr>
-        <tr><th>Calça flare</th><td>R$ 69,34</td><td>R$ 10,00</td><td>R$ 5,00</td><td>R$ 84,34</td><td>R$ 199,90</td><td class="pos">R$ 81,58</td></tr>
-        <tr><th>Short</th><td>R$ 26,84</td><td>R$ 8,00</td><td>R$ 5,00</td><td>R$ 39,84</td><td>R$ 99,90</td><td class="pos">R$ 40,08</td></tr>
+        <tr><th>4 · 4 · 3 · 2 <em>(decidida na reunião)</em></th><td>416</td><td>R$ 33.851</td><td>R$ 82.638</td><td>R$ 19.149</td></tr>
+        <tr><th>3 · 3 · 2 · 2</th><td>320</td><td>R$ 26.039</td><td>R$ 63.568</td><td>R$ 26.961</td></tr>
+        <tr class="rec"><th>2 · 2 · 1 · 1 <strong>— recomendada</strong></th><td>192</td><td>R$ 15.624</td><td>R$ 38.141</td><td><strong>R$ 37.376</strong></td></tr>
       </tbody>
     </table>
   </div>
-  <p><strong>O tecido é 70% a 80% do custo.</strong> A costura de R$ 15,00 da facção é a menor parte — o que significa que negociar malha rende muito mais que negociar costura.</p>
 </section>
 
 <section>
-  <h2>2 · Posicionamento</h2>
+  <h2>Posicionamento</h2>
   <div class="band g">
-    <span class="tag">A tese</span>
-    <p>A reclamação dominante do segmento é <strong>legging transparente</strong> — repetida no Reclame Aqui contra marcas distintas, ao longo de anos. Mas a promessa de resolvê-la já está tomada: existe legging a R$ 26,99 no Mercado Livre anunciando "não fica transparente", e especialistas como Citrine (R$ 179,90) e DNA Sport construíram a marca em cima disso.</p>
-    <p><strong>O espaço vazio não é a alegação. É a prova.</strong> Nenhuma marca pesquisada publica gramatura em g/m², composição detalhada ou teste de opacidade no anúncio. Esse dado já existe na ficha técnica do fornecedor e custa zero para publicar.</p>
+    <span class="tag">A tese, em uma frase</span>
+    <p>A marca que <strong>mostra o número</strong> num mercado que só faz promessa.</p>
+    <p>A reclamação dominante do segmento é legging transparente — repetida no Reclame Aqui contra marcas distintas, por anos. Mas prometer opacidade é grátis: existe legging a R$ 26,99 no Mercado Livre anunciando exatamente isso. <strong>Nenhuma marca pesquisada publica gramatura em g/m², composição detalhada ou teste de opacidade no anúncio.</strong> Esse dado já está na ficha do fornecedor e custa zero para publicar.</p>
   </div>
-  <h3>Onde a marca se encaixa</h3>
+  <h3>Onde a marca fica na régua</h3>
   <div class="scroll">
     <table>
-      <caption>Régua de preço do segmento</caption>
-      <thead><tr><th>Faixa</th><th>Preço</th><th>Quem ocupa</th></tr></thead>
+      <thead><tr><th>Faixa</th><th>Preço do conjunto</th><th>Quem ocupa</th></tr></thead>
       <tbody>
-        <tr><th>Fashion premium</th><td>R$ 320+</td><td style="text-align:left;white-space:normal">Vestem (legging avulsa R$ 319–379), Alto Giro (R$ 349,90+), Track&amp;Field, Live!</td></tr>
-        <tr><th>Especialistas</th><td>R$ 150–260</td><td style="text-align:left;white-space:normal">Citrine, DNA Sport, Manalinda, Amoras, Massam — <strong>é aqui</strong></td></tr>
-        <tr><th>Entrada</th><td>R$ 27–80</td><td style="text-align:left;white-space:normal">Anônimos de marketplace</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p>O conjunto a R$ 249–299 compete contra uma legging Vestem <em>avulsa</em> de R$ 319–379. É uma faixa disputada, mas com margem viável — e a única em que esta estrutura de custo cabe.</p>
-</section>
-
-<section>
-  <h2>3 · Canais e margem</h2>
-  <div class="scroll">
-    <table>
-      <caption>Margem bruta do conjunto a R$ 249,90, por canal</caption>
-      <thead><tr><th>Canal</th><th>Taxa</th><th>Margem</th><th>%</th><th>Papel</th></tr></thead>
-      <tbody>
-        <tr><th>E-commerce próprio</th><td>~4,5%</td><td class="pos">R$ 134,39</td><td>54%</td><td style="text-align:left;white-space:normal">Margem. Destino do tráfego pago.</td></tr>
-        <tr><th>Mercado Livre Clássico</th><td>14% + var.</td><td class="pos">R$ 106,15</td><td>42%</td><td style="text-align:left;white-space:normal">Volume e descoberta.</td></tr>
-        <tr><th>Mercado Livre Premium</th><td>19% + var.</td><td>R$ 93,66</td><td>37%</td><td style="text-align:left;white-space:normal">Só para o carro-chefe.</td></tr>
-        <tr><th>Shopee</th><td>14% + R$ 26</td><td>R$ 86,15</td><td>34%</td><td style="text-align:left;white-space:normal">Aquisição, nunca margem.</td></tr>
+        <tr><th>Fashion premium</th><td>R$ 320+</td><td style="text-align:left;white-space:normal">Vestem, Alto Giro, Track&amp;Field, Live!</td></tr>
+        <tr class="rec"><th>Especialistas</th><td>R$ 150–260</td><td style="text-align:left;white-space:normal">Citrine, DNA Sport, Massam, <strong>Martier (R$ 130–230)</strong> — é aqui</td></tr>
+        <tr><th>Entrada</th><td>R$ 27–130</td><td style="text-align:left;white-space:normal">Anônimos de marketplace</td></tr>
       </tbody>
     </table>
   </div>
   <div class="band w">
-    <span class="tag">Regra que decide a operação</span>
-    <p>O piso praticável em marketplace é <strong>R$ 199,90</strong>. Abaixo disso a conta não fecha: a R$ 149,90 a Shopee deixa R$ 6,15 por peça. A faixa de entrada está fora de alcance para esta estrutura de custo, e tentar entrar nela é a forma mais rápida de queimar o capital.</p>
+    <span class="tag">O concorrente que importa</span>
+    <p><strong>Martier</strong> — Aracruz/ES, aberta em 2021, CNAE de varejo: terceiriza produção, exatamente como vocês, cinco anos à frente. Catálogo de 146 itens, conjunto de R$ 130 a R$ 229,80.</p>
+    <p>O preço de <em>entrada</em> dela está apenas 26% acima do <em>custo de produção</em> de vocês. Ela produz mais barato porque tem escala. <strong>Não disputem preço com ela — vocês perdem.</strong> Disputem prova.</p>
   </div>
 </section>
 
 <section>
-  <h2>4 · Projeção do ciclo 1</h2>
-  <p>Com R$ 20 mil de mídia. ROAS é quanto cada real de anúncio devolve em venda; marca nova entra abaixo da média de mercado (3 a 6) porque não tem histórico de pixel, avaliação nem prova social.</p>
+  <h2>Preço e margem</h2>
   <div class="scroll">
     <table>
-      <caption>Resultado e caixa ao fim do ciclo 1</caption>
-      <thead><tr><th>Cenário</th><th>ROAS</th><th>Receita</th><th>% do lote</th><th>Margem</th><th>Resultado</th><th>Caixa</th></tr></thead>
+      <caption>Preço de venda definido</caption>
+      <thead><tr><th>Peça</th><th>Custo</th><th>Varejo</th><th>Margem ML</th><th>Atacado (60%)</th><th>Margem atacado</th></tr></thead>
       <tbody>
-        <tr><th>Pessimista</th><td>1,5</td><td>R$ 30.000</td><td>36%</td><td>R$ 12.605</td><td class="neg">−R$ 7.395</td><td class="neg">−R$ 28.957</td></tr>
-        <tr><th>Provável</th><td>2,5</td><td>R$ 50.000</td><td>61%</td><td>R$ 21.008</td><td class="hero">+R$ 1.008</td><td class="neg">−R$ 12.361</td></tr>
-        <tr><th>Otimista</th><td>4,0</td><td>R$ 80.000</td><td>97%</td><td>R$ 33.613</td><td class="pos">+R$ 13.613</td><td class="pos">+R$ 12.533</td></tr>
+        <tr><th>Conjunto legging + top</th><td>R$ 102,76</td><td>R$ 249,90</td><td class="pos">R$ 106,15</td><td>R$ 149,90</td><td class="pos">R$ 47,14</td></tr>
+        <tr><th>Macacão</th><td>R$ 89,34</td><td>R$ 219,90</td><td class="pos">R$ 93,77</td><td>R$ 131,90</td><td class="pos">R$ 42,56</td></tr>
+        <tr><th>Calça flare</th><td>R$ 84,34</td><td>R$ 199,90</td><td class="pos">R$ 81,58</td><td>R$ 119,90</td><td class="pos">R$ 35,56</td></tr>
+        <tr><th>Short</th><td>R$ 39,84</td><td>R$ 99,90</td><td class="pos">R$ 40,08</td><td>R$ 59,90</td><td class="pos">R$ 20,06</td></tr>
       </tbody>
     </table>
   </div>
-  <p><strong>Resultado</strong> é margem bruta menos mídia — o produto e as taxas já estão descontados. <strong>Caixa</strong> é o que voltou menos os R$ 53.851 desembolsados. O caixa negativo no meio do caminho é normal e não é prejuízo: a produção é paga inteira no início, e o estoque que sobra ainda não virou dinheiro.</p>
-  <div class="band k">
-    <span class="tag">Ciclo 2 — onde o negócio ganha</span>
-    <p>O estoque restante vira receita <strong>sem novo gasto de produção</strong>. Em qualquer cenário, o acumulado de dois ciclos chega aos mesmos <strong>R$ 14.722</strong> — o que muda é quando. Vender devagar não destrói o lucro, adia. O que destrói é não vender.</p>
+  <p><strong>Piso inegociável: R$ 199,90 no marketplace.</strong> Abaixo disso a conta não fecha — a R$ 149,90 a Shopee deixa R$ 6,15 por peça. A faixa de entrada está fora de alcance para esta estrutura de custo.</p>
+</section>
+
+<section>
+  <h2>Os quatro canais</h2>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Canal</th><th>Margem no conjunto</th><th>Papel no plano</th></tr></thead>
+      <tbody>
+        <tr><th>Instagram → e-commerce próprio</th><td class="pos">R$ 134,39 · 54%</td><td style="text-align:left;white-space:normal">Margem máxima. Destino de todo tráfego que vocês controlam.</td></tr>
+        <tr><th>Atacado / revendedoras</th><td class="pos">R$ 47,14 · 31%</td><td style="text-align:left;white-space:normal">Volume sem mídia. Pedido de 10 peças = R$ 1.499. É como Martier e Magia do Mar escoam.</td></tr>
+        <tr><th>Mercado Livre Clássico</th><td>R$ 106,15 · 42%</td><td style="text-align:left;white-space:normal">Descoberta. Aceitar a comissão de 14% como custo de aquisição.</td></tr>
+        <tr><th>Shopee</th><td>R$ 86,15 · 34%</td><td style="text-align:left;white-space:normal">Aquisição pura, nunca margem. Frete grátis é obrigatório desde março/2026.</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
 <section>
-  <h2>5 · O que pode dar errado</h2>
+  <h2>Plano de ação — 90 dias</h2>
+
+  <div class="phase">
+    <div class="phase-h"><span class="phase-n">Fase 0</span><span class="phase-t">Verificar antes de gastar</span><span class="phase-w">Semana 1</span></div>
+    <ul class="acts">
+      <li><b>Auditar o Instagram herdado.</b> Alcance médio dos últimos 30 dias, principais cidades, faixa etária, origem dos seguidores. É o número que decide se o ativo vale R$ 15 mil por post ou R$ 1,2 mil.</li>
+      <li><b>Cotar o que ainda é estimativa.</b> Costura de macacão, short e flare; aviamentos; e o consumo real de tecido com encaixe profissional — que pode devolver 10% a 15% do custo de malha.</li>
+      <li><b>Confirmar taxas nos simuladores oficiais</b> do Mercado Livre e da Shopee. As comissões usadas aqui vieram de fontes secundárias consistentes, não das centrais.</li>
+      <li><b>Resolver a estrutura societária com advogado.</b> Surgiu na reunião a indicação de que o capital pode sair de um sócio, não da sociedade. Isso se resolve antes do primeiro pedido de malha, não depois.</li>
+      <li><b>Pedir ao fornecedor a ficha técnica completa</b> da malha: composição exata e gramatura em g/m². É a matéria-prima do posicionamento.</li>
+    </ul>
+    <div class="gate"><b>Só avança se</b> a ficha técnica da malha estiver em mãos e a sociedade estiver resolvida.</div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-h"><span class="phase-n">Fase 1</span><span class="phase-t">Pré-venda: descobrir antes de produzir</span><span class="phase-w">Semanas 2–3</span></div>
+    <ul class="acts">
+      <li><b>Reativar o Instagram</b> com a nova marca. Postar diariamente por duas semanas antes de qualquer venda, para o algoritmo devolver alcance.</li>
+      <li><b>Publicar os 8 modelos</b> em foto ou mockup e medir: salvamentos, comentários, cliques, perguntas de tamanho. Isso é pesquisa de demanda gratuita.</li>
+      <li><b>Abrir lista de espera</b> por modelo e por tamanho. Quem se inscreve declara o que quer — e é essa declaração que define a curva de produção.</li>
+      <li><b>Sondar 10 revendedoras</b> na rede que vocês já têm da loja anterior. Uma confirmação de pedido de atacado antes da produção muda o risco do lote inteiro.</li>
+    </ul>
+    <div class="gate"><b>Só avança se</b> houver sinal de demanda em pelo menos 4 dos 8 modelos. Se não houver, o problema é o produto ou a audiência — e produzir não resolve nenhum dos dois.</div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-h"><span class="phase-n">Fase 2</span><span class="phase-t">Produzir o piloto</span><span class="phase-w">Semanas 4–7</span></div>
+    <ul class="acts">
+      <li><b>Emitir o pedido de 192 peças</b> — R$ 15.624 — com a curva ajustada pelo que a lista de espera mostrou, não pelo palpite da reunião.</li>
+      <li><b>Gravar o vídeo de prova</b> durante a produção: teste de opacidade contra a luz, agachamento, peça da marca ao lado de uma concorrente. É o ativo de marketing com maior retorno por real gasto neste posicionamento.</li>
+      <li><b>Montar a ficha técnica pública</b> de cada peça: composição, gramatura, tabela de medidas real medida na peça pronta. Ninguém no segmento faz isso.</li>
+      <li><b>Cadastrar os anúncios</b> no Mercado Livre e na Shopee com a ficha completa, sem publicar ainda.</li>
+    </ul>
+    <div class="gate"><b>Só avança se</b> a peça piloto passar no próprio teste de opacidade. Se não passar, o posicionamento cai junto — e é melhor descobrir aqui do que no Reclame Aqui.</div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-h"><span class="phase-n">Fase 3</span><span class="phase-t">Lançar</span><span class="phase-w">Semanas 8–10</span></div>
+    <ul class="acts">
+      <li><b>Abrir para a lista de espera primeiro</b>, 48 horas antes do público. Converte quem já levantou a mão e gera as primeiras avaliações — que é o que destrava o algoritmo do marketplace.</li>
+      <li><b>Publicar os anúncios</b> nos marketplaces só depois das primeiras vendas diretas, com avaliações já no perfil.</li>
+      <li><b>Ligar a mídia com R$ 2 mil</b> dos R$ 7 mil, usando audiência semelhante construída sobre os 50 mil seguidores. Guardar R$ 5 mil para reforçar o que converter.</li>
+      <li><b>Abrir o atacado</b> com pedido mínimo de 10 peças e tabela própria a 60% do varejo.</li>
+    </ul>
+    <div class="gate"><b>Só escala a mídia se</b> o ROAS passar de 2. Abaixo disso, o dinheiro vai para conteúdo orgânico e atacado, que não dependem de leilão de anúncio.</div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-h"><span class="phase-n">Fase 4</span><span class="phase-t">Repor com dado</span><span class="phase-w">Semanas 11–13</span></div>
+    <ul class="acts">
+      <li><b>Ler o giro real por modelo, cor e tamanho.</b> Depois de 30 dias de venda, a curva verdadeira aparece — e ela raramente é a que se imaginou.</li>
+      <li><b>Reinvestir os R$ 37,4 mil seletivamente:</b> fundo nos modelos que giraram, nada nos que não giraram. É para isso que a reserva existe.</li>
+      <li><b>Descontinuar sem dó</b> o que não vendeu. Modelo parado ocupa capital e atenção que o vencedor precisa.</li>
+      <li><b>Liquidar o encalhe do piloto</b> ainda dentro da estação, antes que vire coleção passada.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Projeção do piloto</h2>
+  <div class="scroll">
+    <table>
+      <caption>192 peças · R$ 7 mil de mídia · margem se vender tudo no varejo: R$ 16.026</caption>
+      <thead><tr><th>Cenário</th><th>Venda paga + orgânica</th><th>% do piloto</th><th>Margem</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><th>Instagram morto, sem atacado</th><td>R$ 17.500</td><td>46%</td><td>R$ 7.352</td><td class="pos">+R$ 352</td></tr>
+        <tr class="rec"><th>Instagram ativo + atacado</th><td>R$ 35.000</td><td>92%</td><td>R$ 14.706</td><td class="hero">+R$ 7.706</td></tr>
+        <tr><th>Piloto esgota</th><td>R$ 38.141</td><td>100%</td><td>R$ 16.026</td><td class="pos">+R$ 9.026</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>O piloto se paga em qualquer cenário. É essa a diferença em relação ao lote de 416 peças: lá o equilíbrio exigia vender 97% do estoque, aqui o pior caso ainda fecha no positivo — e sobram R$ 37,4 mil intactos para a segunda decisão, que será tomada com dado real em vez de palpite.</p>
+</section>
+
+<section>
+  <h2>O que pode dar errado</h2>
   <div class="risks">
-    <div class="risk"><span class="sev s-alta">Alta</span><span class="t">A mídia come 58% da margem</span>
-      <span class="d">R$ 20 mil de anúncio contra R$ 34,7 mil de margem total. Se o ROAS ficar abaixo de 2, o ciclo dá prejuízo. É o risco que mais mexe no resultado — e o mais fácil de subestimar, porque a verba parece confortável.</span></div>
-    <div class="risk"><span class="sev s-alta">Alta</span><span class="t">Devolução por tamanho</span>
-      <span class="d">Moda converte a 1,9% no Brasil justamente por incerteza de tamanho e retorno alto. Cada devolução consome frete de ida e volta e a peça volta para o estoque — às vezes invendável. Tabela de medidas real e vídeo de prova reduzem isso mais que qualquer anúncio.</span></div>
-    <div class="risk"><span class="sev s-alta">Alta</span><span class="t">Alegar sem provar</span>
-      <span class="d">Se a marca promete opacidade e a peça decepciona, ela entra no mesmo Reclame Aqui das concorrentes — e a reclamação é pública e permanente. O posicionamento escolhido é o mais rentável e também o mais punitivo se o produto não sustentar.</span></div>
-    <div class="risk"><span class="sev s-media">Média</span><span class="t">Curva de tamanho errada</span>
-      <span class="d">Se P e M giram mais do que 4 peças e GG encalha, sobra estoque morto exatamente onde o capital já está preso. A curva atual é palpite; a segunda compra deve ser feita com dado de venda real, não com a mesma curva.</span></div>
-    <div class="risk"><span class="sev s-media">Média</span><span class="t">Regra de marketplace muda sem aviso</span>
-      <span class="d">Em março de 2026 o Mercado Livre trocou custo fixo por tarifa variável e a Shopee tornou o frete grátis obrigatório. Quem depende só de marketplace absorve essas mudanças sem poder reagir. É o argumento mais forte para o e-commerce próprio.</span></div>
-    <div class="risk"><span class="sev s-media">Média</span><span class="t">Fornecedor único</span>
-      <span class="d">Uma facção em Vila Velha para toda a produção. Se ela atrasar, encarecer ou fechar, não há plano B — e a segunda cotação só é barata antes de você precisar dela.</span></div>
-    <div class="risk"><span class="sev s-media">Média</span><span class="t">Sazonalidade</span>
-      <span class="d">O segmento concentra procura em verão e em janeiro. Lançar fora desses picos alonga o ciclo 1 e o caixa fica negativo por mais tempo.</span></div>
-    <div class="risk"><span class="sev s-media">Média</span><span class="t">Estrutura societária</span>
-      <span class="d">Surgiu na reunião a indicação de que o capital pode sair de um sócio, não da sociedade. Isso precisa estar escrito antes do primeiro pedido de malha. Fora do escopo desta consultoria: é conversa de advogado, e é barata agora.</span></div>
-    <div class="risk"><span class="sev s-baixa">Baixa</span><span class="t">Estimativas ainda não cotadas</span>
-      <span class="d">Costura de macacão, short e flare, aviamentos e perda de encaixe entraram como estimativa. Se a facção cotar acima, o custo sobe e a margem cai proporcionalmente.</span></div>
+    <div class="risk"><span class="sev s-a">Alta</span><span class="t">O Instagram está morto</span>
+      <span class="d">Todo o plano de orgânico apoia nesse ativo. Conta parada tem 2% de alcance, e o algoritmo não devolve de graça. Se a auditoria da Fase 0 mostrar alcance baixo, a mídia precisa voltar para perto dos R$ 20 mil — ou o lançamento atrasa até a conta aquecer.</span></div>
+    <div class="risk"><span class="sev s-a">Alta</span><span class="t">A peça não passa no próprio teste</span>
+      <span class="d">O posicionamento é o mais rentável e o mais punitivo. Se a marca promete opacidade e a peça decepciona, ela entra no mesmo Reclame Aqui das concorrentes — e reclamação é pública e permanente.</span></div>
+    <div class="risk"><span class="sev s-a">Alta</span><span class="t">Devolução por tamanho</span>
+      <span class="d">Moda converte a 1,9% no Brasil justamente por incerteza de tamanho. Cada devolução consome frete dobrado e devolve peça ao estoque. Tabela de medidas real e vídeo de prova reduzem isso mais que qualquer anúncio.</span></div>
+    <div class="risk"><span class="sev s-m">Média</span><span class="t">O público herdado não converte em fitness</span>
+      <span class="d">Roupa feminina casual e roupa de academia têm sobreposição, não identidade. E a loja anterior fechou — parte da base carrega essa memória. A Fase 1 existe para descobrir isso antes de produzir.</span></div>
+    <div class="risk"><span class="sev s-m">Média</span><span class="t">Regra de marketplace muda sem aviso</span>
+      <span class="d">Em março de 2026 o Mercado Livre trocou custo fixo por tarifa variável e a Shopee tornou o frete grátis obrigatório. Quem depende só de marketplace absorve sem poder reagir. É o argumento mais forte para o canal próprio.</span></div>
+    <div class="risk"><span class="sev s-m">Média</span><span class="t">Fornecedor único</span>
+      <span class="d">Uma facção em Vila Velha para toda a produção. Se atrasar, encarecer ou fechar, não há plano B. A segunda cotação só é barata antes de você precisar dela.</span></div>
+    <div class="risk"><span class="sev s-m">Média</span><span class="t">Sazonalidade</span>
+      <span class="d">O segmento concentra procura em verão e em janeiro. Lançar fora dos picos alonga o ciclo e prende capital por mais tempo.</span></div>
+    <div class="risk"><span class="sev s-b">Baixa</span><span class="t">Custos ainda não cotados sobem</span>
+      <span class="d">Costura de três das quatro famílias, aviamentos e perda de encaixe são estimativa. Se a facção cotar acima, a margem cai proporcionalmente — mas com lote de 192 peças o erro custa menos da metade.</span></div>
+    <div class="risk"><span class="sev s-b">Baixa</span><span class="t">Atacado canibaliza o varejo</span>
+      <span class="d">Revendedora vendendo abaixo do preço de tabela corrói o posicionamento. Resolve-se com contrato de preço mínimo sugerido e exclusividade por região.</span></div>
   </div>
 </section>
 
 <section>
-  <h2>6 · Próximos passos</h2>
-  <ol class="steps">
-    <li><strong>Cotar o que ainda é estimativa</strong><span>Costura de macacão, short e flare; aviamentos; e o consumo real de tecido com encaixe profissional, que pode devolver 10% a 15% do custo de malha.</span></li>
-    <li><strong>Confirmar taxas nos simuladores oficiais</strong><span>As comissões vieram de fontes secundárias consistentes, não das centrais do Mercado Livre e da Shopee. Preço não se fecha sem isso.</span></li>
-    <li><strong>Definir a ficha técnica pública</strong><span>Gramatura, composição e tabela de medidas reais no anúncio. É o diferencial mais barato que a pesquisa encontrou e o que sustenta o preço de R$ 249–299.</span></li>
-    <li><strong>Produzir a prova antes do lançamento</strong><span>Vídeo de teste de opacidade contra a luz, peça da marca ao lado de uma concorrente. É o ativo de marketing com maior retorno por real gasto neste posicionamento.</span></li>
-    <li><strong>Resolver a estrutura societária</strong><span>Com advogado, antes do primeiro desembolso de produção.</span></li>
-    <li><strong>Fechar o mix com dado, não com entusiasmo</strong><span>A decisão de 8 modelos foi tomada por adição na reunião. Vale revisitá-la com a tabela de margem na mão antes de emitir o pedido.</span></li>
-  </ol>
+  <h2>Indicadores para acompanhar</h2>
+  <ul class="plain">
+    <li><strong>Alcance médio por post</strong> no Instagram — é o termômetro do ativo mais importante do plano.</li>
+    <li><strong>ROAS</strong> — abaixo de 2, corta a mídia. Acima de 3, reforça.</li>
+    <li><strong>Giro por SKU</strong> — define a reposição da Fase 4 e mostra a curva real de tamanhos.</li>
+    <li><strong>Taxa de devolução</strong> — acima de 15% em moda, a tabela de medidas está errada.</li>
+    <li><strong>Pedidos de atacado por mês</strong> — o canal que escoa volume sem gastar mídia.</li>
+    <li><strong>Nota e número de avaliações</strong> nos marketplaces — é o que destrava o tráfego orgânico deles.</li>
+  </ul>
 </section>
 
 <footer>
   Preparado por Lucas · Consultoria de marca própria — moda fitness<br>
   Valores em reais, agosto de 2026. Cenários e premissas, não previsão de resultado.<br>
-  Benchmarks de ROAS, conversão e ticket médio de fontes públicas de mercado, citados no relatório de pesquisa que acompanha este plano.<br>
+  Custos de costura de macacão, short e calça flare, aviamentos e perda de encaixe são estimativa, não cotação.<br>
+  Comissões de marketplace apuradas em fontes secundárias consistentes; confirmar nos simuladores oficiais.<br>
   Estrutura tributária, societária e jurídica fora do escopo: consultar contador e advogado.
 </footer>
 
