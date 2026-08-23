@@ -66,6 +66,17 @@ Com R$ 7 mil e ROAS 2,5: receita paga R$ 17.500 (21% do lote). Com orgânico 1x 
 Armadilha do ML: o algoritmo favorece anúncio com histórico de venda e reputação. Orgânico de marketplace é
 **consequência** das primeiras vendas, não substituto delas. Marca nova começa invisível.
 
+## O ATIVO QUE MUDA O PLANO (23/08)
+Revelaram: **Instagram com ~50 mil seguidores**, de uma loja de roupas femininas que FECHOU. E toparam vender atacado.
+Valor por post conforme saúde da conta: morta 2% de alcance → R$ 1.250 · ativa 12% → R$ 15.000 · aquecida 20% → R$ 37.500.
+Uma conta ativa entrega em poucos posts o que R$ 7 mil de mídia entregam em um ciclo. **Isso valida o argumento do orgânico deles.**
+Uso mais valioso, em ordem: (1) **pré-venda para não produzir errado** — postar as 8 peças e medir antes de emitir pedido;
+(2) **lookalike no Meta Ads** — 50 mil é base muito acima do mínimo, tira o ROAS de marca nova de ~1,5 para 3-4;
+(3) venda orgânica direta.
+**Verificar antes de contar com ele:** última postagem, alcance médio real, engajamento, demografia (cidade e idade),
+se seguidores são orgânicos ou de sorteio, e se o público de roupa feminina casual converte em fitness.
+Risco não trivial: a loja FECHOU. Seguidores podem lembrar disso, e pode haver cliente insatisfeito na base.
+
 ## OPORTUNIDADE NÃO CONSIDERADA: atacado/revenda
 Martier E Magia do Mar, as duas concorrentes capixabas que eles citaram, têm programa de revenda com CNPJ.
 É como marca local escoa volume sem mídia. Os empresários não mencionaram esse canal — e eles já têm loja

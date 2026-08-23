@@ -22,6 +22,9 @@
 - **2026-08-23** — Exigência de qualidade: tecido "padrão Lycra" ou similar.
 - **2026-08-23** — Preço de R$ 299 por conjunto foi cogitado e DESCARTADO pelos próprios empresários: querem custo antes de preço. Decisão correta, reforçar.
 - **2026-08-23** — Marketing adiado por escolha deles.
+- **2026-08-23** — Mídia reduzida de R$ 20 mil para **R$ 7 mil**, com o argumento de que parte da receita virá de venda orgânica. Argumento aceito: meu modelo ignorava o orgânico.
+- **2026-08-23** — **Toparam vender no atacado** para revendedoras com CNPJ, como Martier e Magia do Mar fazem.
+- **2026-08-23** — **ATIVO REVELADO: Instagram com ~50 mil seguidores**, herdado de loja de roupas femininas fechada. Muda o plano — é o que sustenta a aposta no orgânico, SE a conta estiver viva.
 - **2026-08-23** — Grade fechada: 4 cores x 4 tamanhos (P, M, G, GG). PP descartado por baixo giro.
 - **2026-08-23** — Mix fechado em 7 modelos: 3 conjuntos (legging+top), 2 macacões, 2 shorts (um modelo curto com forro, um reto com bolso porta-celular). Resultado: 112 SKUs.
 - **2026-08-23** — Capital definido como derivado do lote, não como restrição. Pediram o cálculo do investimento necessário.
