@@ -58,6 +58,19 @@ O custo de produção do cliente (R$ 102,76) está a apenas 26% do preço de ENT
 Magia do Mar: Vila Velha/ES, fundada 1997, CNAE de **indústria** (fabrica). 29 anos, peças a partir de R$ 34,90.
 **Faturamento das duas não é obtenível** — limitadas de capital fechado. Recusado estimar.
 
+## Mídia reduzida para R$ 7 mil (23/08) + argumento do orgânico
+Decidiram R$ 7 mil de mídia, alegando que parte da receita virá de venda orgânica.
+**O argumento é válido e meu modelo estava incompleto** — eu tratava receita = mídia x ROAS, ignorando orgânico.
+Com R$ 7 mil e ROAS 2,5: receita paga R$ 17.500 (21% do lote). Com orgânico 1x o pago: 42% do lote, resultado +R$ 7.706.
+**Para escoar o lote inteiro, o orgânico precisa ser 3,7x a venda paga — R$ 65 mil sem anúncio.** Isso é muito para marca nova.
+Armadilha do ML: o algoritmo favorece anúncio com histórico de venda e reputação. Orgânico de marketplace é
+**consequência** das primeiras vendas, não substituto delas. Marca nova começa invisível.
+
+## OPORTUNIDADE NÃO CONSIDERADA: atacado/revenda
+Martier E Magia do Mar, as duas concorrentes capixabas que eles citaram, têm programa de revenda com CNPJ.
+É como marca local escoa volume sem mídia. Os empresários não mencionaram esse canal — e eles já têm loja
+de roupa, logo já têm rede de fornecedor e cliente PJ. Levantar na próxima reunião.
+
 ## Riscos vivos
 - **Ancoragem no R$ 15.** Tratam custo de costura como custo do produto. É a confusão mais cara da mesa.
 - **Marketplace come margem.** Comissão e frete não entraram na conta deles.
