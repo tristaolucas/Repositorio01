@@ -47,3 +47,6 @@ next-env.d.ts
 # sqlite
 *.db
 *.db-journal
+
+# BMAD personal (per-developer) install answers
+_bmad/**/*.user.toml
