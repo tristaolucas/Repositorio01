@@ -50,6 +50,14 @@ Lucro do lote inteiro em ~2 ciclos: **R$ 14.722** sobre R$ 60 mil comprometidos 
 Caixa fica negativo no meio (−R$ 12,4 mil no provável) antes de virar. Precisam aguentar isso.
 Alavanca mais forte: preço. A R$ 299 a margem do conjunto sobe de R$ 106 para R$ 148 (+40%).
 
+## CONCORRENTE-ESPELHO: Martier (23/08)
+Aracruz/ES, fundada 2021, CNAE de **varejo** — terceiriza produção, mesmo modelo do cliente.
+Catálogo fitness de **146 itens**. Legging R$ 85-129,90 · top R$ 45-99,90 · macacão R$ 155-309,90.
+**Conjunto equivalente: R$ 130 (entrada) a R$ 229,80 (topo).** O cliente planeja R$ 249,90 — acima do topo dela.
+O custo de produção do cliente (R$ 102,76) está a apenas 26% do preço de ENTRADA dela. Ela produz mais barato.
+Magia do Mar: Vila Velha/ES, fundada 1997, CNAE de **indústria** (fabrica). 29 anos, peças a partir de R$ 34,90.
+**Faturamento das duas não é obtenível** — limitadas de capital fechado. Recusado estimar.
+
 ## Riscos vivos
 - **Ancoragem no R$ 15.** Tratam custo de costura como custo do produto. É a confusão mais cara da mesa.
 - **Marketplace come margem.** Comissão e frete não entraram na conta deles.
