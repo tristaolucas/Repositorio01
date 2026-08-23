@@ -13,3 +13,15 @@ user_name = "Lucas"
 communication_language = "Português (Brasil)"
 # Idioma dos documentos gerados (PRD, arquitetura, épicos, histórias).
 document_output_language = "Português (Brasil)"
+
+# Agente custom (não pertence a um módulo BMAD, então o instalador não o
+# registra sozinho). Skill: .claude/skills/agent-consultor-marca-fitness
+# `name` fica vazio de propósito: o agente escolhe o próprio nome no
+# Primeiro Sopro. Preencha aqui depois que ele se apresentar.
+[agents.agent-consultor-marca-fitness]
+module = "custom"
+name = ""
+title = "Consultor de Negócios — Marca Fitness"
+icon = "🏋️"
+description = "Braço analítico e estratégico de Lucas na consultoria de marca própria de roupas fitness, da descoberta ao lançamento."
+agent_type = "memory"

@@ -1,0 +1,18 @@
+# DO NOT EDIT -- overwritten on every update.
+#
+# Agent customization surface for agent-consultor-marca-fitness.
+# Team overrides:     {project-root}/_bmad/custom/agent-consultor-marca-fitness.toml
+# Personal overrides: {project-root}/_bmad/custom/agent-consultor-marca-fitness.user.toml
+
+[agent]
+
+# --- Metadata (install-time roster contract) ---
+# Consumed by module.yaml:agents[] and `[agents.<code>]` in central config.
+
+code = "agent-consultor-marca-fitness"
+name = ""
+title = "Consultor de Negócios — Marca Fitness"
+icon = "🏋️"
+description = "Braço analítico e estratégico de Lucas na consultoria de marca própria de roupas fitness, da descoberta ao lançamento."
+agent_type = "memory"   # stateless | memory | autonomous
+

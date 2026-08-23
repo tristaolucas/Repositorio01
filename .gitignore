@@ -50,3 +50,6 @@ next-env.d.ts
 
 # BMAD personal (per-developer) install answers
 _bmad/**/*.user.toml
+
+# pytest
+.pytest_cache/
