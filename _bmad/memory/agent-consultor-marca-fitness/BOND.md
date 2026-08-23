@@ -44,6 +44,8 @@
 - `[PESQUISAR]` Concorrência direta na faixa de preço pretendida nos marketplaces.
 
 ## Entregáveis Já Apresentados
+- **2026-08-23** — **PLANO DE NEGÓCIO**: https://claude.ai/code/artifact/17e10098-8207-4e4a-8d8a-4e702f400137 · fonte em `_bmad-output/planning-artifacts/plano-de-negocio.html`. Cobre produto, posicionamento, canais, projeção de 2 ciclos e 9 riscos.
+- **2026-08-23** — Capital fechado pelos empresários: **R$ 40 mil mercadoria + R$ 20 mil mídia = R$ 60 mil**.
 - **2026-08-23** — `_bmad-output/planning-artifacts/custo-lote-inicial.md`: investimento inicial de produção, com cenários, custo por peça e premissas separadas entre pesquisado, confirmado e estimado.
   Versão apresentável publicada: https://claude.ai/code/artifact/b01e6bd7-293d-4217-87c7-7c9fc51c6212 (privado até Lucas compartilhar). Para atualizar, republicar o mesmo arquivo `_bmad-output/planning-artifacts/custo-lote-inicial.html`.
 

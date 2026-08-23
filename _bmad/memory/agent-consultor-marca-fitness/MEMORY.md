@@ -37,10 +37,18 @@ Conjunto sai a ~R$ 103 produzido. Os R$ 299 cogitados dão menos de 3x, antes de
 ## O que ainda não existe
 Teto de capital, concorrência mapeada, custo de matéria-prima, custo de costura de macacão e short.
 
+## CORREÇÃO DE CÁLCULO (23/08) — não repetir o erro
+Ao projetar o ciclo, subtraí o custo de produção da margem bruta. Mas a margem bruta JÁ desconta
+produto e taxa de canal. Contei o custo duas vezes e projetei prejuízo de R$ 32 mil onde havia
+quase empate. **Margem bruta − mídia = resultado. Nunca subtrair a produção de novo.**
+Separar sempre RESULTADO (P&L) de CAIXA (desembolso real).
+
 ## O RISCO CENTRAL DO PLANO (23/08)
-O lote de 416 peças **não se paga com venda parcial**. Ponto de equilíbrio no ML: **97% do lote**. Na Shopee, 124% — vender tudo não paga. Marca nova vende 40-60% do primeiro lote, o que significa resultado negativo de R$ 13 mil a R$ 20 mil no primeiro ciclo.
-Isso não muda cortando a curva: com 4 modelos o equilíbrio também é ~98%. **A margem por peça é que é fina demais em relação ao lote.**
-O que muda o jogo: lote menor libera caixa para mídia. 8 modelos deixam R$ 6,1 mil para anúncio; 4 modelos deixam **R$ 23,5 mil**. Estoque não gira sozinho.
+Com R$ 20 mil de mídia, o ciclo 1 dá: pessimista (ROAS 1,5) −R$ 7.395 · provável (ROAS 2,5) **+R$ 1.008** · otimista (ROAS 4,0) +R$ 13.613.
+**A mídia consome 58% da margem total do lote** (20.000 de 34.722). É o número que aperta o plano.
+Lucro do lote inteiro em ~2 ciclos: **R$ 14.722** sobre R$ 60 mil comprometidos (~25%).
+Caixa fica negativo no meio (−R$ 12,4 mil no provável) antes de virar. Precisam aguentar isso.
+Alavanca mais forte: preço. A R$ 299 a margem do conjunto sobe de R$ 106 para R$ 148 (+40%).
 
 ## Riscos vivos
 - **Ancoragem no R$ 15.** Tratam custo de costura como custo do produto. É a confusão mais cara da mesa.
