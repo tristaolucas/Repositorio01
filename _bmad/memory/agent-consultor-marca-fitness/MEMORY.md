@@ -9,8 +9,17 @@ Empresários de Anchieta/ES criando marca própria de roupa fitness para muscula
 - Eles mesmos travaram a discussão de preço até saber o custo. Bom sinal: pensam em ordem.
 
 ## A grade (fechada em 2026-08-23)
-7 modelos x 4 cores x 4 tamanhos = **112 SKUs**. 3 conjuntos, 2 macacões, 2 shorts.
-Só a costura dos conjuntos, a 3 peças por SKU, já dá R$ 2.160 — e costura é a menor parte do custo.
+8 modelos x 4 cores x 4 tamanhos = **128 SKUs**. 3 conjuntos, 2 macacões, 2 shorts, 1 calça flare.
+
+## O número do lote inicial (só produção)
+Cenário de trabalho: **R$ 31.248** — malha intermediária (R$ 69,90/kg), 3 peças por SKU, 384 peças.
+Faixa completa: R$ 18,3 mil (econômica, 2/SKU) a R$ 63,8 mil (premium, 5/SKU).
+
+## Números de tecido que valem guardar
+Suplex poliamida/elastano 88/12, 340 g/m², largura 1,60 m, **rende 1,75 m/kg**.
+Faixa de preço: R$ 58,90 · R$ 69,90 · R$ 89,90 por kg.
+**Tecido é 70-80% do custo da peça. A costura de R$ 15 é a menor parte** — foi o que confirmou o alerta da primeira reunião.
+Conjunto sai a ~R$ 103 produzido. Os R$ 299 cogitados dão menos de 3x, antes de comissão e frete.
 
 ## O que ainda não existe
 Teto de capital, concorrência mapeada, custo de matéria-prima, custo de costura de macacão e short.

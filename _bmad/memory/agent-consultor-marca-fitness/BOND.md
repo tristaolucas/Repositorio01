@@ -24,19 +24,24 @@
 - **2026-08-23** — Grade fechada: 4 cores x 4 tamanhos (P, M, G, GG). PP descartado por baixo giro.
 - **2026-08-23** — Mix fechado em 7 modelos: 3 conjuntos (legging+top), 2 macacões, 2 shorts (um modelo curto com forro, um reto com bolso porta-celular). Resultado: 112 SKUs.
 - **2026-08-23** — Capital definido como derivado do lote, não como restrição. Pediram o cálculo do investimento necessário.
+- **2026-08-23** — 8º modelo acrescentado: calça flare. Mix agora = 3 conjuntos, 2 macacões, 2 shorts, 1 flare. Grade sobe para **128 SKUs**. Confirmaram que a cápsula está fechada.
+- **2026-08-23** — Pediram o cálculo ignorando custos de venda e etapas posteriores. Entregue: R$ 18,3 mil a R$ 63,8 mil conforme malha e profundidade; cenário de trabalho **R$ 31.248** (malha intermediária, 3 peças/SKU).
 
 ## Pendências Abertas
 - `[DEFINIR COM CLIENTE]` **Teto de capital.** Não responderam. Reformular: em vez de "quanto vocês têm", perguntar "qual número, se eu disser, faz vocês desistirem?".
 - `[DEFINIR COM CLIENTE]` **Cortar a cápsula de 7 modelos para 3 ou 4?** 112 SKUs é grande demais para lançamento. Eles mesmos deram o contra-argumento (a concorrente que vende muito com pouco sortimento).
 - `[DEFINIR COM CLIENTE]` Profundidade: quantas peças por SKU no primeiro lote.
-- `[PESQUISAR]` Custo de costura de macacão e de short na facção de Vila Velha — só temos o conjunto (R$ 15).
-- `[PESQUISAR]` Custo de matéria-prima: malha poliamida/elastano e poliéster/elastano, preço por kg e por metro, e rendimento por conjunto.
+- `[COTAR NA FACÇÃO]` Costura de macacão, short e calça flare. Estimei R$ 15 / R$ 8 / R$ 10 no cálculo — são chutes meus, não cotação. Trocar pelos números reais muda o total.
+- `[COTAR NA FACÇÃO]` Consumo real de tecido com encaixe profissional. Meu cálculo é peça a peça e conservador; enfesto com vários tamanhos pode cortar 10-15%.
+- `[COTAR]` Aviamentos por peça (usei R$ 5,00 estimado).
+- `[DEFINIR COM CLIENTE]` Profundidade do lote (2, 3 ou 5 peças/SKU) e faixa de malha. São as duas alavancas que mais movem o investimento.
+- ~~`[PESQUISAR]` Custo de matéria-prima~~ **FECHADO 2026-08-23**: malha suplex poliamida/elastano 88/12, 340 g/m², 1,60 m, rende 1,75 m/kg. Faixa R$ 58,90 a R$ 89,90/kg.
 - `[PESQUISAR]` Comissão real de Mercado Livre e Shopee na categoria de moda fitness, e regras de frete grátis.
 - `[PESQUISAR]` Composição e gramatura que Alo Yoga e concorrentes nacionais de musculação usam.
 - `[PESQUISAR]` Concorrência direta na faixa de preço pretendida nos marketplaces.
 
 ## Entregáveis Já Apresentados
-{O que já está na mão dos empresários, e quando.}
+- **2026-08-23** — `_bmad-output/planning-artifacts/custo-lote-inicial.md`: investimento inicial de produção, com cenários, custo por peça e premissas separadas entre pesquisado, confirmado e estimado.
 
 ## Como Lucas Trabalha
 {Ritmo de reunião, formato que ele prefere, o que o irrita num entregável.}
