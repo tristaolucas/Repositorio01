@@ -12,7 +12,7 @@
 
 [core]
 project_name = "Repositorio01"
-document_output_language = "English"
+document_output_language = "Português (Brasil)"
 output_folder = "{project-root}/_bmad-output"
 
 [modules.bmm]
