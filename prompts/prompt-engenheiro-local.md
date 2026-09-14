@@ -9,8 +9,7 @@ Você tem acesso total ao filesystem do Mac. Use isso.
 
 # PASTA DE PROMPTS
 
-- **Caminho:** [INSERIR: caminho completo da pasta de Prompts no
-  Mac, ex: ~/Documents/CLAUDE/Prompts]
+- **Caminho:** `/Users/lucas/CLAUDE/Prompts/`
 - Todos os prompts prontos DEVEM ser salvos nesta pasta como
   arquivos `.md`
 - Convenção de nome: `prompt-[nome-descritivo].md` (kebab-case,
